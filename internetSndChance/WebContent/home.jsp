@@ -177,7 +177,7 @@
 		<div id="mainContent" style="padding-bottom: 0; ">
 			<div id="homePage">	
 				<div id="leftHome">
-					<h1>What is Bonus Play? Lottery!</h1>
+					<h1>What is Bonus Play?</h1>
 					<p>For more information about Bonus Play, please visit our <a href="FAQs">Frequently Asked Questions</a> page.</p>
 				</div>
 			</div>
