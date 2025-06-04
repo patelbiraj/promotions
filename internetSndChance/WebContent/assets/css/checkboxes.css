@@ -1,0 +1,72 @@
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+}
+.prettycheckbox, .prettyradio {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.prettycheckbox > a, .prettyradio > a {
+    background: url("../i/checkable/sprites.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 30px;
+    margin: 0;
+    width: 30px;
+}
+.prettycheckbox > a:focus, .prettyradio > a:focus {
+    outline: 0 none;
+}
+.prettycheckbox label, .prettyradio label {
+    cursor: pointer;
+    display: block;
+    float: left;
+    margin: 6px 5px;
+}
+.prettycheckbox a.disabled, .prettycheckbox label.disabled, .prettyradio a.disabled, .prettyradio label.disabled {
+    cursor: not-allowed;
+}
+.prettycheckbox > a {
+    background-position: 0 0;
+}
+.prettycheckbox > a:focus {
+    background-position: -30px 0;
+}
+.prettycheckbox > a.checked {
+    background-position: -60px 0;
+}
+.prettycheckbox > a.checked:focus {
+    background-position: -90px 0;
+}
+.prettycheckbox > a.checked.disabled {
+    background-position: -150px 0;
+}
+.prettycheckbox > a.disabled {
+    background-position: -120px 0;
+}
+.prettyradio > a {
+    background-position: -180px 0;
+}
+.prettyradio > a:focus {
+    background-position: -210px 0;
+}
+.prettyradio > a.checked {
+    background-position: -240px 0;
+}
+.prettyradio > a.checked:focus {
+    background-position: -270px 0;
+}
+.prettyradio > a.checked.disabled {
+    background-position: -330px 0;
+}
+.prettyradio > a.disabled {
+    background-position: -300px 0;
+}

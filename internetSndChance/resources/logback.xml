@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+	<property name="LOG_FILE" value="/sdslogs/sdswebapp/secondChanceLog/secondChanceApp" />
+	
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">            
+            <file>${LOG_FILE}.log</file>            
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            	 <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd-HH}.backup</fileNamePattern>   	
+            </rollingPolicy>          
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </encoder>            
+     </appender>
+        
+        
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+		  <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%L - %msg%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="SYSERR" class="ch.qos.logback.core.ConsoleAppender" target="System.err" withJansi="true">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%L - %msg%n</Pattern>
+		</encoder>
+	</appender>
+
+	<!-- 
+	<logger name="com.flalottery.dao" level="WARN" > 
+		<appender-ref ref="STDOUT" /> 
+	</logger> 
+	-->
+	
+	<logger name="com.flalottery.secondchance" level="DEBUG"> 
+        <appender-ref ref="FILE" /> 
+    </logger>
+    
+    
+	<root level="WARN">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="SYSERR" />
+	</root>
+
+</configuration>

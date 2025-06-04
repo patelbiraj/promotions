@@ -1,0 +1,117 @@
+legend {
+	font-size: 138.5%;
+}
+
+legend span.number {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 60px;
+	color: #444444;
+}
+
+form label {
+	margin-bottom: 2px;
+	font-size: 93%;
+}
+
+p.formHint {
+	text-align: right;
+}
+
+input, select {
+	background-color: #F5F5F5;
+	border: 1px solid #CCC;
+	padding: 2px;
+}
+
+.hidden {
+	display: none;
+}
+
+.checkbox {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.entrySection{
+	height: auto;
+	width: 370px;
+}
+
+.alertSection {
+	float: right;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	width: 10px;
+	height: 24px;
+	margin-top: 20px;
+	font-size: 123.1%;
+	text-align: center;
+}
+
+#midDraws {
+	float: left;
+	margin-top: 1em;
+	padding-left: 26px;
+	width: 350px;
+}
+
+#midDraws h3, #eveDraws h3, #nightDraws h3 { font-weight: bold; font-size: 14px; }
+
+#eveDraws {
+	clear: left;
+	float: left;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding-left: 26px;
+	width: 350px;
+}
+
+#nightDraws {
+	float: right;
+	margin-top: 1em;
+	margin-bottom: 10px;
+	padding-left: 26px;
+	width: 420px;
+}
+
+#whatIsNewDiv {
+	padding: 1em 26px 1em 26px;
+	background-color: #FEFDE5;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #CCCCCC;
+	clear: both;
+}
+
+form#textMessageNotificationPrefs input[type=text], form#textMessageNotificationPrefs select {
+	width: 100%;
+}
+
+form.textPreferences input#other {
+	width: 91%;
+	float: right;
+	margin-bottom: 1em;
+}
+
+label img {
+	margin: 1em;
+	vertical-align: middle;
+}
+
+.checkbox {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+label span {
+	display:inline-block;
+	vertical-align: middle;
+}
+
+div.entrySection label {
+	font-size: 85%;
+	font-weight: bold;
+	display: block;
+}
+
+.textMessageNotificationPrefs3 label, #emailNotificationPrefs label, #register div#whatIsNewDiv label {
+	display: inline;
+}

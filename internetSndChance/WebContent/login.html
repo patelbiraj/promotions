@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MONOPOLY MILLIONAIRES' CLUB</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="assets/css/reset.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/globalstyles.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/styles.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/css/checkboxes.css" type="text/css" media="all">
+	<link rel="icon" href="assets/i/favicon.ico">
+</head>
+<body>
+  <div id="header">
+    <div class="wrapper">
+      <a id="lotteryLogo" href="#">
+        <!-- TODO: The lotteries are responsible for adding their own logo -->
+        <img width="144" alt="Lottery Logo" src="assets/i/lottery_logo.png">
+      </a>
+      <div class="outerLogo">
+        <img id="smallMonopolyLogo" alt="Monopoly Logo" src="assets/i/small_logo.png">
+      </div>
+      <div id="accountHolder">
+        <!-- TODO: The lotteries are responsible for adding login and create account links -->
+        <a class="btn" href="#">Account Login</a>
+        <a href="#" class="btn small grey" id="createAccountBtn">Create Account</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="content">
+  	<div class="wrapper">
+  		<div id="LoginArea">
+  			<h1>Login</h1>
+  			<p></p>
+  			<p class="Error ErrorText"></p>
+  			
+        
+        <!-- TODO: The form action will need to be changed -->
+  			<form method="post" action="" name="Login" id="Login" novalidate="novalidate">
+  				<p>Please enter your information below to login</p>
+  				<div class="Input">
+  					<label for="Email">Email Address:</label>
+  					<input class="email required" value="" size="25" maxlength="255" name="Email" id="Email"><br>
+  					<span>username@domain.com</span>
+  				</div>
+  				<div class="Input">
+  					<label for="Password">Password:</label>
+  					<input type="password" class="ValidatePassword required" value="" size="25" maxlength="255" name="Password" id="Password">
+  				</div>
+  				<input type="submit" value="Login Now" class="btn">
+  			</form>
+  		</div>
+  	</div>
+  </div>
+
+  <div id="footer">
+    <div class="footerWrapper">
+      <!-- TODO: The lotteries are responsible for adding links -->
+      <ul>
+        <li><a href="#">FAQ's</a></li>
+        <li><a href="#">Rules</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+      <p>
+        The MONOPOLY name and logo, MONOPOLY MILLIONAIRES&#39; CLUB, the distinctive design of
+        the game board, the four corner squares, the MR. MONOPOLY name and character, as well as
+        each of the distinctive elements of the board and playing pieces are trademarks of Hasbro
+        for its property trading game and game equipment. &copy; 1935, 2014 Hasbro. All Rights Reserved.
+        Licensed by Hasbro.
+      </p>
+      <img alt="Monopoly Millionaires Club" src="assets/i/MONOPOLY-OLP_color.png">
+    </div>
+  </div>
+
+	<script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.validate-1.11.1.min.js"></script>
+  <script type="text/javascript">
+    $( document ).ready( function() {
+      $( "#Login" ).validate( {
+        errorPlacement: function() { },
+        invalidHandler: function( e, validator )
+        { $( ".ErrorText" ).html( "Please double check the highlighted fields." ); },
+        errorClass: 'Error',
+        highlight: function( element, errorClass )
+        { $( element ).parent().addClass( errorClass ); },
+        unhighlight: function( element, errorClass )
+        { $( element ).parent().removeClass( errorClass ); } } );
+        $( "#Email" ).focus();
+    } );
+  </script>
+</body>
+</html>

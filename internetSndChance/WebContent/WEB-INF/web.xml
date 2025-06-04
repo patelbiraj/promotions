@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.flalottery.secondchance.domain.SecondChanceContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.flalottery.secondchance.utility.SCListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>BarcodeServlet</servlet-name>
+		<servlet-class>org.krysalis.barcode4j.servlet.BarcodeServlet</servlet-class>
+	</servlet>
+<!-- 
+	<servlet>
+		<servlet-name>BarcodeErrorServlet</servlet-name>
+		<servlet-class>org.krysalis.barcode4j.webapp.BarcodeErrorServlet</servlet-class>
+	</servlet>
+-->	
+	<servlet-mapping>
+		<servlet-name>BarcodeServlet</servlet-name>
+		<url-pattern>/gensvg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BarcodeServlet</servlet-name>
+		<url-pattern>/genbc</url-pattern>
+	</servlet-mapping>
+<!-- 	
+	<servlet-mapping>
+		<servlet-name>BarcodeErrorServlet</servlet-name>
+		<url-pattern>/errsvg</url-pattern>
+	</servlet-mapping>
+-->	
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<mime-mapping>
+		<extension>xhtml</extension>
+		<!--mime-type>application/xhtml+xml</mime-type -->
+		<!--the above is not supported by IE6 -->
+		<mime-type>text/html</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svgz</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+  <error-page>
+    <exception-type>org.krysalis.barcode4j.BarcodeException</exception-type>
+    <location>/errsvg</location>
+  </error-page>
+  
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<scripting-invalid>false</scripting-invalid>
+		</jsp-property-group>
+	</jsp-config>
+
+	<resource-ref id="ResourceRef_1203107470902">
+		<res-ref-name>Inet2DataResource</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Unshareable</res-sharing-scope>
+	</resource-ref>
+	
+
+</web-app>

@@ -1,0 +1,404 @@
+@charset "utf-8";
+/**
+ * @file 			2022_lottoBonus-styles
+ *
+ * The selector below is used to keep this template from interfering with other
+ * promotional pages. The ID (#main) should remain the same but the class (.holiday)
+ * should be changed for each new promotion.
+ *
+ * HINT: Perform and "find and replace all" for and replace with
+ * #main.(new_promo) before modifying the new template.
+ */
+{
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 13px;
+}
+
+/**
+ * Page headings and standard links
+ */
+h1 {
+	color: #592C82;
+	font-size: 2em;
+	border-bottom: 1px solid #592C82;
+	text-transform: uppercase;
+}
+h2 { 
+	color: #02A77D;
+	font-size: 1.8em;
+	text-transform: uppercase;
+	text-align: center;
+}
+h3 { font-weight: bold; margin-top: 10px; }
+
+a {
+	color: #02A77D;
+}
+a:hover {
+	color: #D5DE23;
+}
+a:link {
+    color: #0386B4;
+    font-weight: bold;
+    outline: none;
+}
+a:visited {
+    color: #D5DE23;
+    font-weight: bold;
+    outline: none;
+}
+
+
+#mainContentWrap {
+	padding: 0px 20px;
+}
+
+p span, li span, table .bold { font-weight: bold; }
+hr { margin: 25px 0; }
+p.boldNote {
+	color: #E54360; 
+	font-weight: bold;
+	text-align: left;
+	padding-top:25px;
+	margin-bottom: 6px;
+	text-transform: uppercase;
+	margin-left:30px;
+	text-align: center;
+}
+
+p.text-bold {
+
+	font-weight: bold;
+
+}
+
+p.prizes-bold {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 4px;
+}
+
+p.prizes-disclaimer{
+	font-size: 10px;
+	font-style: italic;
+	padding-left: 48px;
+	
+}
+
+p.disclaimer {
+	font-weight: bolder;
+	font-size: 10px;
+	text-align: center;
+	margin-bottom: 15px;
+	margin-top:-10px;
+		
+}
+
+.redText{
+	color: #FF0000;
+	font-weight: bold;
+
+}
+p.boldNote span { font-weight: normal; }
+ol li { 
+	margin-bottom: 8px;
+}
+
+.txtl { text-align: left !important; }
+.txtc { text-align: center !important; }
+.txtr { text-align: right !important; }
+
+.howtoplay img.oblogo {
+	float: left;
+	display: block;
+	margin-top: -15px;
+	left: -10px;
+	position: absolute;
+	z-index: 5;
+}
+
+div.grouper.rules div#mainContentWrap div#mainContent > ol > li { margin-bottom: 20px; }
+
+.entry {}
+
+.enterVouchers a {
+  background: #02A77D;
+  background: -moz-linear-gradient(top,  #02A77D 0%, #02A77D 50%, #02A77D 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A77D), color-stop(50%,#02A77D), color-stop(100%,#02A77D));
+  background: -webkit-linear-gradient(top,  #02A77D 0%,#02A77D 50%,#02A77D 100%);
+  background: -o-linear-gradient(top,  #02A77D 0%,#ffcc66 50%,#02A77D 100%);
+  background: -ms-linear-gradient(top,  #02A77D 0%,#ffcc66 50%,#02A77D 100%);
+  background: linear-gradient(to bottom,  #02A77D 0%,#ffcc66 50%,#02A77D 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9900', endColorstr='#ff9900',GradientType=0 );
+	color: #003366;
+}
+.enterVouchers a:hover {
+	color: #000;
+}
+
+.left {text-align: left;}
+.center {text-align: center;}
+
+/**
+ * Navigation menu
+ */
+#gameNav {
+  background: #E74361;
+  background: -moz-linear-gradient(top,  #FFFFFF 0%, #FFFFFF 100%);
+  background: -webkit-linear-gradient(top,  #EF586F 0%,#EF586F 100%);
+  background: linear-gradient(to bottom,  #DE3249 0%,#DE3249 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1fada8', endColorstr='#1d8784',GradientType=0 );
+}
+
+#gameNav ul,
+#gameNav ul a:link,
+#gameNav ul a:visited {
+	color: #FFF;
+}
+
+#gameNav ul li {
+	border-right: 1px #FFF solid;
+	border-left: 1px #FFF solid;
+}
+
+#gameNav ul li.active span,
+#gameNav ul li.active a:hover span {
+	color: #FFF;
+}
+
+#gameNav ul a:hover span {
+	color: #fecf5c;
+}
+
+#gameNav ul li.inactive span {
+	color: #CCC;
+}
+
+/**
+ * Table styles
+ */
+table.drawDates,
+table.dataTbl {
+	background-color: #FFFFFF;
+	border-color: #fff;
+	border-radius: 7px;
+	margin: 30px auto 25px;
+	padding: 0px;
+	text-align: center;
+	width: 90%;
+}
+
+table.drawDates thead tr th,
+table.dataTbl thead tr th {
+  background: none;
+  border: 1px solid; 
+  color: #FFFFFF;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+table.dataTbl thead tr th {
+  background: #592C82;
+  white-space: nowrap;
+  
+   	
+}
+
+
+table thead tr:first-child, table thead tr th:first-child,
+table thead tr:last-child, table thead tr th:last-child {
+	border-radius:0;
+}
+
+
+
+table.drawDates tbody tr td,
+table.dataTbl tbody tr td {
+  text-align: left;
+	padding: 8px;
+    background-color: #F2F2F3;
+}
+
+table.drawDates tbody tr.even td,
+table.dataTbl tbody tr.even td {
+	background-color: #FFFFFF;
+}
+
+
+/*
+table.drawDates tbody tr.odd td,
+table.dataTbl tbody tr.odd td {
+	background-color: #fad000;
+}*/
+table.drawDates tbody tr.total td,
+table.dataTbl tbody tr.total td {
+	background-color: #F2F2F3;
+	color: #000;
+	font-size: 123%;
+}
+
+
+table.dataTbl caption {
+	color: #0BA67D;
+	text-align: center;
+	margin: 10px auto 15px auto;
+	font-weight:bold;
+}
+
+div.leftCol {
+	display: inline-block;
+	float: left;
+	width: 60%;
+}
+
+div.rightCol {
+	display: inline-block;
+	float: right;
+	width: 35%;
+}
+
+/**
+ * Sample Ticket
+ */
+div#mainContent div#sampleTicket { float: right; width: 428px; height: 456px; text-align: left; margin: 15px -30px 30px 20px; padding: 5px; position: relative; }
+div#sampleTicket p { text-align: center; font-weight: bold; margin: 0;}
+div#mainContent div#sampleTicket p.tktSmall1 { margin-top: -40px; width:100px; font-size: 12px; }
+div#mainContent div#sampleTicket p.tktSmall2 { margin-top: 6px; padding-left: 120px; width: 175px; font-size: 9px; }
+
+form#ticketEntryForm p .ticketsubmit,
+a.button {
+  background: #DE3249;
+  background: -moz-linear-gradient(top,  #02A77D 0%, #02A77D 50%, #02A77D 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#02A77D), color-stop(50%,#02A77D), color-stop(100%,#02A77D));
+  background: -webkit-linear-gradient(top,  #02A77D 0%,#02A77D 50%,#02A77D 100%);
+  background: -o-linear-gradient(top,  #02A77D 0%,#02A77D 50%,#02A77D 100%);
+  background: -ms-linear-gradient(top, #02A77D 0%,#02A77D 50%,#02A77D 100%);
+  background: linear-gradient(to bottom,  #02A77D 0%,#02A77D 50%,#02A77D 100%);
+  form#ticketEntryForm { margin: 20px 2px 20px 40px;}
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02A77D', endColorstr='#02A77D',GradientType=0; );
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+form#ticketEntryForm input.tktNumber { border: 1px solid #000; margin: 0px 2px 2px 0px; width:190px;}
+form#ticketEntryForm p.ticketNumberNote { font-size: 11px; margin: -10px 0 0 60px;}
+form#ticketEntryForm p.ticketNumberPinBox { font-size: 11px; margin: -10px 0 0 60px;}
+form#ticketEntryForm input.promoCode { border: 1px solid #000; margin: 0px 2px 5px 0px; width:190px; text-transform:uppercase; text-align:center;}
+form#ticketEntryForm p.promoCodeNote, span.promoCodeNote { font-size: 11px; margin: -10px 0 0 40px; }
+
+form#ticketEntryForm input.ticketSubmit {
+  margin: -101px 66px -50px 120px;
+  background: #D72540;
+  background: -moz-linear-gradient(top,  #D72540 0%, #D72540 50%, #D72540 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D72540), color-stop(50%,#D72540), color-stop(100%,#D72540));
+  background: -webkit-linear-gradient(top,  #D72540 0%,#D72540 50%,#D72540 100%);
+  background: -o-linear-gradient(top,  #D72540 0%,#D72540 50%,#D72540 100%);
+  background: -ms-linear-gradient(top,  #D72540 0%,#D72540 50%,#D72540 100%);
+  background: linear-gradient(to bottom,  #D72540 0%,#D72540 50%,#D72540 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D72540', endColorstr='#D72540',GradientType=0 );
+  color: #fff !important; 
+  float:right;
+}
+
+h2.tktEntry { color: #000; margin: 30px 0 -20px 0; font-size: 153.9%; font-weight: bold; text-align: left; text-transform: none; }
+table.dataTbl tbody tr td.row_2 {text-align: center; padding: 12px; font-weight: bold; font-size:14px;}
+table.dataTbl tbody tr td.entry {text-align: center;}
+/*table.dataTbl tbody tr:nth-of-type(odd) {background-color: #fad000;}
+table.dataTbl tbody tr:nth-of-type(even) {background-color: #fff8ca;}*/
+
+
+
+h1.title {
+	border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0px 6px;
+  text-align: center;
+}
+
+h2.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+  font-weight: bold;
+	margin: 0px;
+  text-align: center;
+}
+
+p.winReportNote {
+  font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: left;
+	margin: 8px 5px 10px;
+}
+
+div#subNav { margin: 10px -50px 0 0; width: 290px; }
+
+#subNavContent { width: 230px; color: #02A77D; }
+
+#subNavContent h3 {
+	color: #02A77D;
+}
+
+#subNavContent ul li {
+	color: #CCC;
+}
+#subNavContent ul a {
+	color: #02A77D;
+}
+#subNavContent ul a:hover {
+	color: #D5DE23;
+}
+#subNavContent ul a:visited {
+	color: #007736;
+
+	/*text-shadow: 1px 1px 2px rgb(17, 17, 17); */
+}
+table.winners {width: 100%; margin: 30px auto 25px;
+	padding: 0px;
+	text-align: center;
+	background: #fff;
+    border: 2px solid rgb(0, 0, 0);
+	box-shadow: 2px 2px 3px rgb(51, 51, 51);
+	border-collapse: separate;
+	border-spacing: 0px;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	font-size: 12px;
+	
+}
+table.winners td, table.winners th {text-align: center; vertical-align: middle; padding-left: 10px;}
+table.winners td {font-size: 12px;}
+.winnersReport {width: 100%; margin: 0 auto;}
+.winnersReport h1.title {
+	font-size: 16px;
+	margin: 10px 0 6px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: none;
+}
+
+
+
+.toIframe ul a:visited {
+	color: #007736;
+}
+
+.monopolyDoubler div.winnersReport h2 { color: #592C82; }
+
+.monopolyDoubler div.winnersReport table thead td { background-color: #592C82; color: #FFF;}
+
+.monopolyDoubler div.winnersReport table thead th { background-color: #EC1B50; color: #FFF; }
+
+.monopolyDoubler div.winnersReport table tbody tr:nth-child(even) {
+            background-color: #f5f5dc;
+        }
+
+
+
+

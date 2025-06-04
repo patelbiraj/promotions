@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ticketEntryHistory h1 {
+	margin-bottom: 1em;
+}
+
+.ticketEntryHistory h2 {
+	color: #555555;
+	margin-bottom: 1em;
+}
+
+.ticketEntryHistory section.column1 {
+	float: left;
+	margin-right: 20px;
+	border-right: 1px solid #DB4D69;
+	width: 150px;
+	height: 100%;
+	font-size: 16px;
+}
+
+.ticketEntryHistory section.column2 {
+	width: 739px;
+	float: right;
+}
+
+
+.ticketEntryHistory nav ol{
+	list-style-type: none;
+	margin: 0;
+	padding: 16px 0;
+}
+
+.ticketEntryHistory nav ol li{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	border-bottom: 1px solid #DB4D69;
+}
+
+.ticketEntryHistory nav ol li:first-child{
+	border-top:  1px solid #DB4D69;
+}
+
+.ticketEntryHistory nav ol li span, .ticketEntryHistory nav ol li a {
+	display: block;
+	padding: 10px;
+	font-weight: bold;
+}
+
+.ticketEntryHistory nav ol li span {
+	color: #888;
+}
+
+.ticketEntryHistory nav ol li span.selected {
+	background-color: #DB4D69;
+	color: #FFF;
+}
+
+.ticketEntryHistory nav ol li a:hover{
+	background-color: #F8DBE1;
+}
+
+.ticketEntryHistory nav ol li a:active{
+	background-color: #E27187;
+	color: #FFF;
+}
+
+
+.ticketEntryHistory table {
+	border-spacing: 0;
+	background-color:transparent;
+	border-radius:5px;
+	overflow: hidden;
+	border: 1px solid #555555;
+	font-size: 13px;
+}
+
+
+.ticketEntryHistory th, .ticketEntryHistory td {
+	border-bottom: 1px solid #111;
+	background-color: #FFF;
+	line-height: 1.5em;
+	padding: 0.4em 0.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.ticketEntryHistory th {
+	background: #00675A;/*#E98300;*/
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+
+}
+
+.ticketEntryHistory section.column2 table{
+	width: 730px;
+	margin: 0;
+}
+
+.ticketEntryHistory table.ticketEntries .column2{ 
+	width: 185px;
+}
+
+.ticketEntryHistory table.ticketEntries .column3, .ticketEntryHistory table.ticketEntries .column4{
+	width: 82px;
+}
+
+.ticketEntryHistory table.ticketEntries .column5{
+	width: 114px;
+}
+
+
+
+.ticketEntryHistory th.header { 
+    background-image: url(../images/gif/bg_white.gif);     
+    cursor: pointer; 
+    background-repeat: no-repeat; 
+    background-position: center left; 
+    padding-left: 20px;
+    
+} 
+
+.ticketEntryHistory th.headerSortUp { 
+    background-image: url(../images/gif/desc_white.gif);
+} 
+
+.ticketEntryHistory th.headerSortDown { 
+    background-image: url(../images/gif/asc_white.gif); 
+} 
+

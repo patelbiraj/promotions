@@ -1,0 +1,437 @@
+@charset "utf-8";
+/**
+ * @file 			2021-bonusPlayGetaway
+ *
+ * The selector below is used to keep this template from interfering with other
+ * promotional pages. The ID (#main) should remain the same but the class (.holiday)
+ * should be changed for each new promotion.
+ *
+ * HINT: Perform and "find and replace all" for and replace with
+ * #main.(new_promo) before modifying the new template.
+ */
+  {
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 13px;
+  }
+
+/**89110e
+ * Page headings and standard links
+ */
+h1 {
+	color: #00492e;
+	font-size: 2em;
+	border-bottom: 1px solid #00492e;
+	text-transform: uppercase;
+}
+h2 { 
+	color: #00492e;
+	font-size: 1.8em;
+	text-transform: uppercase;
+	text-align: center;
+}
+h3 { font-weight: bold; 
+	color: #00492e;
+	font-size: 1.2em;
+}
+
+a {
+	color: #89110e;
+	text-decoration: none;
+}
+a:hover {
+	color: #00492e;
+}
+a:active, a:link  {
+    color: #89110e;
+    font-weight: bold;
+    outline: none;
+}
+a:visited {
+    color: #00492e;
+    font-weight: bold;
+    outline: none;
+}
+
+
+#mainContentWrap {
+	padding: 0px 20px;
+}
+
+p span, li span, table .bold { font-weight: bold; }
+hr { margin: 25px 0; }
+p.boldNote {
+	color: #89110e;
+	font-weight: bolder;
+	text-align: left;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+}
+span.smallBottomNote {
+	color: #000;
+	font-weight: bold;
+	text-align: left;
+	margin-left: 30px;
+	font-size: x-small;
+	text-transform: uppercase;
+	background-color: #EA90A1;
+}
+p.limitedEntries {color:#a31616; font-weight:bolder;}
+p.boldNote span { font-weight: normal; color:#89110e}
+ol li { 
+	margin-bottom: 8px;
+}
+
+.txtl { text-align: left !important; }
+.txtc { text-align: center !important; }
+.txtr { text-align: right !important; }
+.aloha {text-align: center; font-weight:bold; font-size: 26px; color:#00492e; Width:600px; margin-left:80px; font-family:Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";}
+.drawings {margin-bottom:25px; margin-top: 5px;}
+.header3 {text-align:center; font-size:1.4em; margin-bottom:-25px;}
+.entries {text-align: center; font-weight:bold; font-size: 16px; color:#fff; background-color:#89110e; height:30px; padding-top:20px;}
+
+.howtoplay img.oblogo {
+	float: left;
+	display: block;
+	margin-top: -15px;
+	left: -10px;
+	position: absolute;
+	z-index: 5;
+}
+.u{
+text-decoration: underline;
+}
+.small{
+font-size:10px;
+}
+div.bonusPlayGetaway.rules div#mainContentWrap div#mainContent > ol > li { margin-bottom: 20px; }
+
+.entry {}
+
+.enterVouchers a {
+  background: #EE3236;
+  background: -moz-linear-gradient(top,  #EE3236 0%, #EE3236 50%, #EE3236 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EE3236), color-stop(50%,#EE3236), color-stop(100%,#EE3236));
+  background: -webkit-linear-gradient(top,  #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  background: -o-linear-gradient(top,  #EE3236 0%,#ffcc66 50%,#EE3236 100%);
+  background: -ms-linear-gradient(top,  #EE3236 0%,#ffcc66 50%,#EE3236 100%);
+  background: linear-gradient(to bottom,  #EE3236 0%,#ffcc66 50%,#EE3236 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9900', endColorstr='#ff9900',GradientType=0 );
+	color: #003366;
+}
+.enterVouchers a:hover {
+	color: #000;
+}
+
+.left {text-align: left;}
+.center {text-align: center;}
+
+/**
+ * Navigation menu
+ */
+#gameNav {
+  background: #89110e;
+  background: -moz-linear-gradient(top,  #89110e 30%, #89110e 70%);
+  background: -webkit-linear-gradient(top,  #89110e 30%,#89110e 70%);
+  background: linear-gradient(to bottom,  #89110e 2%,#89110e 30%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1fada8', endColorstr='#1d8784',GradientType=0 );
+}
+
+#gameNav ul,
+#gameNav ul a:link,
+#gameNav ul a:visited {
+	color: #FFF;
+}
+
+#gameNav ul li {
+	border-right: 1px #FFF solid;
+	border-left: 1px #FFF solid;
+}
+
+#gameNav ul li.active span,
+#gameNav ul li.active a:hover span {
+	color: #FFF;
+}
+
+#gameNav ul a:hover span {
+	color: #fecf5c;
+}
+
+#gameNav ul li.inactive span {
+	color: #CCC;
+}
+
+/**
+ * Table styles
+ */
+table.drawDates,
+table.dataTbl {
+	background-color: #00492e;
+
+	margin: 30px auto 25px;
+	padding: 0px;
+	text-align: center !important;
+	width: 80%;
+}
+
+table.drawDates thead tr th,
+table.dataTbl thead tr th {
+  background: none;
+  border: 0.5px solid #FFFFFF; 
+  color: #ffffff;
+  font-size: 123%;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+table.dataTbl thead {
+  background: #00492e;
+}
+
+table.dataTbl thead tr th {
+	white-space: nowrap;
+}
+
+table.drawDates tbody tr td,
+table.dataTbl tbody tr td {
+  text-align: left;
+	border: 1px solid #FFFFFF;
+	color: #000;
+	padding: 8px;
+	background-color: #FFF2BB;
+}
+
+table.prTbl tbody tr td.row_2 {text-align: left; padding: 12px; font-weight: bold; font-size:14px;}
+
+table.prTbl {
+	background-color: #00492e;
+	margin: 30px auto 25px;
+	padding: 0px;
+	text-align: center !important;
+	width: 100%;
+}
+
+table.prTbl thead tr th {
+  background: none;
+  background-color: #00492e;	
+  border: 0.5px solid #FFFFFF; 
+  color: #FFF;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+table.prTbl thead {
+  background: #89110e;
+}
+
+table.prTbl tbody tr td {
+  text-align: left;
+	border: 1px solid #FFFFFF;
+	font-size: 123%;
+	color: #000;
+	padding: 8px;
+	background-color: #FFF2BB;
+}
+
+table.prTbl caption {
+	color: #89110e;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 30px auto -24px auto;
+}
+
+table.prTbl h3 {
+	color: #00492e;
+	text-align: center;
+	font-size: 1.5em;
+	margin-bottom: -25px;
+}
+
+div.leftCol {
+	display: inline-block;
+	float: left;
+	width: 60%;
+}
+
+div.rightCol {
+	display: inline-block;
+	float: right;
+	width: 35%;
+}
+.tablesorter {text-emphasis-color: #fff;}
+/**
+ * Sample Ticket
+ */
+/*div#mainContent div#sampleTicket { float: right; text-align: right; margin: 5px 5px 5px 5px; position: relative; }*/
+div#mainContent div#sampleTicket { float: right; text-align: right; margin: -15px -10px 20px 20px; padding: 5px; position: relative; }
+div#sampleTicket p { text-align: center; font-weight: bold; margin: 0;}
+div#mainContent div#sampleTicket p.tktSmall1 { margin-top: -40px; width:100px; font-size: 12px; }
+div#mainContent div#sampleTicket p.tktSmall2 { margin-top: 6px; padding-left: 120px; width: 175px; font-size: 9px; }
+div#mainContent div#sampleTicket img{ margin-left:0px;}
+
+form#ticketEntryForm p .ticketsubmit,
+a.button {
+  background: #EE3236;
+  background: -moz-linear-gradient(top,  #EE3236 0%, #EE3236 50%, #EE3236 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EE3236), color-stop(50%,#EE3236), color-stop(100%,#EE3236));
+  background: -webkit-linear-gradient(top,  #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  background: -o-linear-gradient(top,  #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  background: -ms-linear-gradient(top, #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  background: linear-gradient(to bottom,  #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EE3236', endColorstr='#EE3236',GradientType=0 );
+  color: #fff !important;
+  text-shadow: none !important;
+
+	
+}
+
+form#ticketEntryForm { margin: 20px 2px 20px 40px; }
+form#ticketEntryForm input.tktNumber { border: 1px solid #000; margin: 0px 2px 2px 0px; width:190px;}
+form#ticketEntryForm input.tktNumberPin { border: 1px solid #000; margin: 0px 2px 2px 60px; width:70px;}
+form#ticketEntryForm span.tktNumberPin { margin-left:90px;}
+form#ticketEntryForm p.ticketNumberNote { font-size: 11px; margin: -10px 0 0 50px;}
+form#ticketEntryForm input.promoCode { border: 1px solid #000; margin: 0px 2px 5px 80px; width:190px; text-transform:uppercase; text-align:center;}
+form#ticketEntryForm p.promoCodeNote, span.promoCodeNote { font-size: 11px; margin: -10px 0 0 105px;}
+form#ticketEntryForm .promoCode { margin-top: 15px !important;}
+
+form#ticketEntryForm input.ticketSubmit, form#ticketEntryForm button.ticketSubmit {
+  /*margin-left: 160px;*/	
+  background: #EE3236;
+  background: -moz-linear-gradient(top,  #EE3236 0%, #EE3236 50%, #EE3236 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EE3236), color-stop(50%,#EE3236), color-stop(100%,#EE3236));
+  background: -webkit-linear-gradient(top,  #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  background: -o-linear-gradient(top,  #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  background: -ms-linear-gradient(top,  #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  background: linear-gradient(to bottom,  #EE3236 0%,#EE3236 50%,#EE3236 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EE3236', endColorstr='#EE3236',GradientType=0 );
+  color: #fff !important;
+}
+
+h2.tktEntry { color: #444; margin: 30px 0 -20px 0; font-size: 153.9%; font-weight: bold; text-align: left; text-transform: none; width:100%;}
+table.dataTbl tbody tr td.row_2 {text-align: center; padding: 12px; font-weight: bold; font-size:14px;}
+h2.tktEntry span { color: #89110e;}
+
+h1.title {
+	border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0px 6px;
+  text-align: center;
+}
+
+h2.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px;
+  text-align: center;
+  color:#00492e;
+}
+
+.xmulti{ margin-top: 800px;
+}
+
+p.winReportNote {
+  font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: left;
+	margin: 8px 5px 10px;
+}
+
+div#subNav { margin: 10px -50px 0 0; width: 290px; }
+
+#subNavContent { width: 230px; color: #89110e; }
+
+#subNavContent h3 {
+	color: #89110e;
+}
+
+#subNavContent ul li {
+	color: #89110e;
+}
+#subNavContent ul a {
+	color: #89110e;
+}
+#subNavContent ul a:hover {
+	color: #fecf5c;
+}
+#subNavContent ul a:visited {
+	color: #89110e;
+
+	/*text-shadow: 1px 1px 2px rgb(17, 17, 17); */
+}
+table.winners {width: 100%; margin: 30px auto 25px;
+	padding: 0px;
+	text-align: center;
+	background: #fff;
+    border: 2px solid rgb(0, 0, 0);
+	box-shadow: 2px 2px 3px rgb(51, 51, 51);
+	border-collapse: separate;
+	border-spacing: 0px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+table.winners td, table.winners th {text-align: center; vertical-align: middle; padding-left: 10px;}
+.winnersReport {width: 97%; margin: 0 auto;}
+.winnersReport h1.title {
+	font-size: 16px;
+	margin: 10px 0 6px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: none;
+	color: #00492e;
+}
+.winnersReport h2.subtitle {
+	color: #00492e;
+}
+.toIframe ul a:visited {
+	color: #F9E48C;
+}
+
+.bonusPlayGetaway h2 { color: #00492e; }
+
+.bonusPlayGetaway div.winnersReport table thead td { background-color: #00492e; color: #FFF; font-weight:bold;  }
+
+.bonusPlayGetaway div.winnersReport table thead th { background-color: #730d08; color: #fff; }
+
+.bonusPlayGetaway div.winnersReport table tbody tr.odd td { background-color: #fff; }
+
+.bonusPlayGetaway div.winnersReport table tbody tr.even td { background-color:  #fcf3e1; }
+
+.buttonBar {
+	text-align: center;
+    display: inline-flex;
+    margin-left: 80px;
+}
+
+.scanButton {
+  	display: block; 
+	background: #EE3236;
+  	position: relative;
+    border-radius: 7px;
+    border: none;
+    height: 29px;
+    padding: 1px 18px 0 25px;
+    margin-left: 6px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    behavior: url(style/PIE.htc);
+  }
+
+@media only screen and (max-device-width: 480px){
+  .scanButton {
+  	display: block;
+  }
+}
+

@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	<constant name="struts.ui.templateSuffix" value="java" />
+	<constant name="struts.ui.theme" value="simple" />
+	 <constant name="struts.action.excludePattern" value=".*/genbc.*" />
+
+	<package name="rest" namespace="/rest" extends="json-default">
+		
+		<action name="auth" class="com.flalottery.secondchance.action.JSONAuthAction">
+			<!-- <param name="promotionId">71</param> -->
+			<!-- <param name="testJNDI">JDBC/Inet2TSTDataSource</param> --> 
+			<result type="json">
+			</result>	
+		</action>
+		
+		<action name="register" class="com.flalottery.secondchance.action.JSONRegisterAction">
+			<!-- <param name="testJNDI">JDBC/Inet2TSTDataSource</param> --> 
+			<result type="json">
+			</result>	
+		</action>
+		
+  	</package>
+
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="loginRequiredStack">
+				<interceptor-ref name="loginRequired" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+			<interceptor-stack name="logoutStack">
+				<interceptor-ref name="logout" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+			<interceptor-stack name="checkSessionStack">
+				<interceptor-ref name="checkSession" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+			<interceptor-stack name="promotionStack">
+				<interceptor-ref name="promotion" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+			<interceptor-stack name="pageNotFoundStack">
+				<interceptor-ref name="pageNotFound" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+
+			<interceptor name="loginRequired" class="com.flalottery.secondchance.interceptor.LoginRequiredInterceptor" />
+			<interceptor name="checkSession" class="com.flalottery.secondchance.interceptor.CheckSessionInterceptor" />
+			<interceptor name="promotion" class="com.flalottery.secondchance.interceptor.PromotionInterceptor" />
+			<interceptor name="pageNotFound" class="com.flalottery.secondchance.interceptor.PageNotFoundInterceptor" />
+			<interceptor name="logout" class="com.flalottery.secondchance.interceptor.LogoutInterceptor" />
+		</interceptors>
+		
+		<default-action-ref name="pageNotFound"></default-action-ref>
+		<default-class-ref class="com.flalottery.secondchance.action.SecondChanceAction"></default-class-ref>
+		
+		<global-results>
+			<result name="home" type="redirect">home</result>
+			<result name="logout" type="redirect">logout</result>
+			<result name="message">/messageMain.jsp</result>
+			<result name="messageNoLogin">/messageNoLoginMain.jsp</result>
+			<result name="login">/loginMain.jsp</result>
+			<result name="redirect" type="redirect">${redirectUrl}</result>
+			<result name="exception">/exceptionMain.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="exception" />
+		</global-exception-mappings>
+
+		<action name="pageNotFound">
+			<interceptor-ref name="pageNotFoundStack"/>
+			<param name="messages.pageTitle">Page Not Found - Florida Lottery Bonus Play Drawings &amp; Promotions</param>
+			<param name="messages.message">The requested page could not be found.</param>
+			<result>/messageMain.jsp</result>
+		</action>
+		<action name="home">
+			<result>/homeMain.jsp</result>
+		</action>
+		<action name="FAQs">
+			<result>/faqsMain.jsp</result>
+		</action>
+		<!-- <action name="socialmediagiveaways">
+			<result>/giveawaysMain.jsp</result>
+		</action> -->	
+				
+		<action name="rules_2023-Pick2">
+			<result>/promotions/2023/2023-pick2_rulesMain.jsp</result>
+		</action>	
+		<action name="rules_2023-Grouper">
+			<result>/promotions/2023/2023-grouper_rulesMain.jsp</result>
+		</action>				
+		<!-- Raffle Promotion -->		
+		<action name="winners_2025-Raffle">
+			<result>/promotions/2025/2025-Raffle_winnersMain.jsp</result>
+		</action>
+		<action name="prizes_2025-Raffle">
+			<result>/promotions/2025/2025-Raffle_prizesMain.jsp</result>
+		</action>
+		<action name="howToPlay_2025-Raffle">
+			<result>/promotions/2025/2025-Raffle_howtoplayMain.jsp</result>
+		</action>
+		<action name="rules_2025-Raffle">
+			<result>/promotions/2025/2025-Raffle_rulesMain.jsp</result>
+		</action>
+		<action name="howToClaim_2025-Raffle">
+			<result>/promotions/2025/2025-Raffle_howToClaimMain.jsp</result>
+		</action>
+		<action name="winners_2024-Raffle">
+			<result>/promotions/2024/2024-Raffle_winnersMain.jsp</result>
+		</action>
+		<action name="rules_2024-Raffle">
+			<result>/promotions/2024/2024-Raffle_rulesMain.jsp</result>
+		</action>
+		<action name="howToClaim_2024-Raffle">
+			<result>/promotions/2024/2024-Raffle_howtoclaimMain.jsp</result>
+		</action>
+		<action name="winners_2023-Raffle">
+			<result>/promotions/2023/2023-Raffle_winnersMain.jsp</result>
+		</action>
+		<action name="rules2_2023-Raffle">
+			<result >/promotions/2023/2023-Raffle_rulesMain2.jsp</result>
+		</action>
+		<action name="rules_2023-Raffle">
+			<result>/promotions/2023/2023-Raffle_rulesMain.jsp</result>
+		</action>
+		
+		
+		
+		<action name="pickdailygames">
+			<result>/promotions/2024/2024-PICK_howtoplayMain.jsp</result>
+		</action>		
+		
+		<action name="pickgamesprizes">
+			<result>/promotions/2024/2024-PICK_prizesMain.jsp</result>
+		</action>		
+		
+		<action name="pickhtp">
+			<result>/promotions/2023/2023-PICK_howtoplayMain.jsp</result>
+		</action>
+		
+		<action name="pickprizes">
+			<result>/promotions/2023/2023-PICK_prizesMain.jsp</result>
+		</action>
+		
+		<action name="pickrules">
+			<result>/promotions/2023/2023-PICK_rulesMain.jsp</result>
+		</action>
+				
+		<action name="login" class="com.flalottery.secondchance.action.SessionAction" method="login">
+			<interceptor-ref name="checkSessionStack" />
+			<result name="input">/loginMain.jsp</result>
+			<result name="forgotPasswordEnforced">/forgotPasswordMain.jsp</result>
+		</action>	
+
+		<action name="forgotPassword" class="com.flalottery.secondchance.action.ForgotPasswordAction">
+			<interceptor-ref name="checkSessionStack" />
+			<result name="input">/forgotPasswordMain.jsp</result>
+			<result name="success">/otpConfirmMain.jsp</result>
+		</action>
+		
+		<action name="submitEmail" class="com.flalottery.secondchance.action.ForgotPasswordAction" method="mailOTP">
+			<interceptor-ref name="checkSessionStack" />
+			<result name="input">/forgotPasswordMain.jsp</result>
+			<result name="success">/otpConfirmMain.jsp</result>
+		</action>
+		
+		<action name="submitOTP" class="com.flalottery.secondchance.action.ForgotPasswordAction" method="validateOTP">
+			<interceptor-ref name="checkSessionStack" />
+			<result name="input">/otpConfirmMain.jsp</result>
+			<result name="success">/updatePasswordMain.jsp</result>
+		</action>
+		
+		<action name="updatePassword" class="com.flalottery.secondchance.action.AccountAction" method="updatePassword">
+			<interceptor-ref name="checkSessionStack" />
+			<result name="input">/updatePasswordMain.jsp</result>
+			<result name="success">/loginMain.jsp</result>
+		</action>
+		
+		<action name="resetPassword" class="com.flalottery.secondchance.action.ForgotPasswordAction">
+			<interceptor-ref name="checkSessionStack" />
+			<result name="input">/resetPasswordMain.jsp</result>
+			<result name="success">/otpConfirmMain.jsp</result>
+		</action>
+		
+		<action name="submitEmailForReset" class="com.flalottery.secondchance.action.ForgotPasswordAction" method="mailOTP">
+			<interceptor-ref name="checkSessionStack" />
+			<result name="input">/resetPasswordMain.jsp</result>
+			<result name="success">/otpConfirmMain.jsp</result>
+		</action>	
+
+		<action name="logout" class="com.flalottery.secondchance.action.SessionAction" method="logout">
+			<interceptor-ref name="logoutStack" />
+		</action>
+
+		<action name="account" class="com.flalottery.secondchance.action.AccountAction">
+			<interceptor-ref name="loginRequiredStack" />
+			<result name="input">/accountMain.jsp</result>
+		</action>
+
+		<action name="register" class="com.flalottery.secondchance.action.AccountAction">
+			<interceptor-ref name="checkSessionStack"/>
+			<param name="messages.pageTitle">Currently Logged In - Florida Lottery Bonus Play Drawings &amp; Promotions</param>
+			<param name="messages.message">You are currently logged in.</param>
+			<result name="input">/registerMain.jsp</result>
+			<result name="success" type="redirect">registerFull</result>
+		</action>
+		
+		<action name="registerFull" class="com.flalottery.secondchance.action.RegisterEmailAction">
+			<interceptor-ref name="checkSessionStack"/>
+			<result name="input">/registerFullEmailMain.jsp</result>
+			<result name="success">/registerFullEmailMain.jsp</result>
+		</action>
+
+		<action name="registerConfirm" class="com.flalottery.secondchance.action.RegisterEmailAction" method="submitEmail">
+			<interceptor-ref name="checkSessionStack"/>
+			<result name="input">/registerFullEmailMain.jsp</result>
+			<result name="success">/registerEmailConfirmMain.jsp</result>
+			<result name="login">/loginMain.jsp</result>
+		</action>
+		
+		<action name="registerOC" class="com.flalottery.secondchance.action.RegisterEmailAction" method="registerOC">
+			<interceptor-ref name="checkSessionStack"/>
+			<result name="input">/registerEmailConfirmMain.jsp</result>
+			<result name="success" type="redirect">register</result>
+			<result name="emailConfirm">/emailConfirmMain.jsp</result>
+			<result name="login">/loginMain.jsp</result>
+		</action>
+
+		<action name="registerEmail" class="com.flalottery.secondchance.action.RegisterEmailAction" method="executeEmail">
+			<interceptor-ref name="checkSessionStack"/>
+			<result name="input">/registerEmailMain.jsp</result>
+			<result name="success">/registerEmailMain.jsp</result>
+		</action>
+		
+		<action name="registerEmailConfirm" class="com.flalottery.secondchance.action.RegisterEmailAction" method="submit">
+			<interceptor-ref name="checkSessionStack"/>
+			<result name="input">/registerEmailMain.jsp</result>
+			<result name="success">/registerEmailConfirmMain.jsp</result>
+		</action>
+		
+		<action name="confirmEmail" class="com.flalottery.secondchance.action.RegisterEmailAction" method="confirm">
+			<interceptor-ref name="checkSessionStack"/>
+			<result name="input">/messageMain.jsp</result>
+			<result name="success">/registerEmailConfirmMain.jsp</result>
+		</action>
+
+		<action name="textMessageNotificationPrefs" class="com.flalottery.secondchance.action.TextPrefsAction">
+			<interceptor-ref name="loginRequiredStack"/>
+			<result name="input">/stayConnected_textMain.jsp</result>
+		</action>
+		
+		<action name="emailNotificationPrefs" class="com.flalottery.secondchance.action.EmailPrefsAction">
+			<interceptor-ref name="loginRequiredStack"/>
+			<result name="success">/stayConnected_emailMain.jsp</result>
+			<result name="input">/stayConnected_emailMain.jsp</result>
+		</action>
+		
+		<!-- @SDS Adding for the Remove Account Mapping -->
+		<action name="removeAccountPrefs" class="com.flalottery.secondchance.action.RemoveAccountAction">
+			<interceptor-ref name="loginRequiredStack"/>
+			<result name="success">/removeAccount_emailMain.jsp</result>
+			<result name="input">/removeAccount_emailMain.jsp</result>
+			<result name="logout">/messageMain.jsp</result>
+			
+		</action>
+ 
+ 
+		<action name="ticketEntryHistory" class="com.flalottery.secondchance.action.TicketEntryHistoryAction">
+			<interceptor-ref name="loginRequiredStack"/>
+			<result name="summary">/ticketEntryHistorySummaryMain.jsp</result>
+			<result name="entries">/ticketEntryHistoryEntriesMain.jsp</result>
+		</action>
+
+	    <action name="printCoupon" class="com.flalottery.secondchance.action.CouponAction">
+		 <result name="success">/printCouponMain.jsp</result>
+		 <result name="errorMessage">/messageMain.jsp</result>
+		 <result name="expiredCoupon">/messageMain.jsp</result>
+	    </action>
+	
+	
+ 	<!-- Requested URL for Fuel for Life Promotion --> 
+	<action name="forlifepromo">
+		<result>/promotions/2023/2023-fuelForLife_howtoplayMain.jsp</result>
+	</action>
+	<!-- Requested URL for Xtreme Cash Promotion --> 	
+	<action name="xtremecashbonusplay">
+		<result>/promotions/2023/2023-Xtreme_howtoplayMain.jsp</result>
+	</action>	
+	 <!--Second Chance Promotions 2025  -->
+	 
+	 <!-- Nascar -->
+	 <action name="*_2025-nascar" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">142</param>
+      <result name="howToPlay">/promotions/2025/2025-nascar_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2025/2025-nascar_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2025/2025-nascar_prizesMain.jsp</result>
+      <result name="rules">/promotions/2025/2025-nascar_rulesMain.jsp</result>
+      <result name="winners">/promotions/2025/2025-nascar_winnersMain.jsp</result>
+      <result name="entry">/promotions/2025/2025-nascar_ticketEntryMain.jsp</result>
+    </action> 
+	  
+	  <!-- Gold Rush -->
+	  <action name="*_2025-goldRush" class="com.flalottery.secondchance.action.CouponPromoAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+	      <param name="promotionId">137</param>
+	      <result name="howToPlay">/promotions/2025/2025-goldRush_howtoplayMain.jsp</result>
+	      <result name="howToClaim">/promotions/2025/2025-goldRush_howtoclaimMain.jsp</result>
+	      <result name="prizes">/promotions/2025/2025-goldRush_prizesMain.jsp</result>
+	      <result name="rules">/promotions/2025/2025-goldRush_rulesMain.jsp</result>
+	      <result name="winners">/promotions/2025/2025-goldRush_winnersMain.jsp</result>
+	      <result name="entry">/promotions/2025/2025-goldRush_ticketEntryMain.jsp</result>
+	      <result name="coupon">/promotions/2025/2025-goldRush_CouponMain.jsp</result>
+      </action> 
+      
+      
+      <!-- For Life Promotion -->
+      <action name="*_2025-forLife" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+	      <param name="promotionId">141</param>
+	      <result name="howToPlay">/promotions/2025/2025-forLife_howtoplayMain.jsp</result>
+	      <result name="howToClaim">/promotions/2025/2025-forLife_howToClaimMain.jsp</result>
+	      <result name="prizes">/promotions/2025/2025-forLife_prizesMain.jsp</result>
+	      <result name="rules">/promotions/2025/2025-forLife_rulesMain.jsp</result>
+	      <result name="winners">/promotions/2025/2025-forLife_winnersMain.jsp</result>
+	      <result name="entry">/promotions/2025/2025-forLife_ticketEntryMain.jsp</result>
+	 </action> 
+      
+	 <!--Second Chance Promotions 2024  -->
+	 
+	  <!-- Black Friday Promotion -->
+	  <action name="*_2024-blackFriday" class="com.flalottery.secondchance.action.CouponPromoAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+	      <param name="promotionId">136</param>
+	      <result name="howToPlay">/promotions/2024/2024-blackFriday_howtoplayMain.jsp</result>
+	      <result name="howToClaim">/promotions/2024/2024-blackFriday_howtoclaimMain.jsp</result>
+	      <result name="prizes">/promotions/2024/2024-blackFriday_prizesMain.jsp</result>
+	      <result name="rules">/promotions/2024/2024-blackFriday_rulesMain.jsp</result>
+	      <result name="winners">/promotions/2024/2024-blackFriday_winnersMain.jsp</result>
+	      <result name="entry">/promotions/2024/2024-blackFriday_ticketEntryMain.jsp</result>
+	      <result name="coupon">/promotions/2024/2024-blackFriday_CouponMain.jsp</result>
+      </action> 
+	
+	  <action name="*_2024-holidayBlowout" class="com.flalottery.secondchance.action.CouponPromoAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">135</param>
+      <result name="howToPlay">/promotions/2024/2024-holidayBlowout_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2024/2024-holidayBlowout_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2024/2024-holidayBlowout_prizesMain.jsp</result>
+      <result name="rules">/promotions/2024/2024-holidayBlowout_rulesMain.jsp</result>
+      <result name="winners">/promotions/2024/2024-holidayBlowout_winnersMain.jsp</result>
+      <result name="entry">/promotions/2024/2024-holidayBlowout_ticketEntryMain.jsp</result>
+      <result name="coupon">/promotions/2024/2024-holidayBlowout_CouponMain.jsp</result>
+    </action> 
+    
+  <action name="*_2024-secretVault" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">132</param>
+      <result name="howToPlay">/promotions/2024/2024-secretVault_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2024/2024-secretVault_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2024/2024-secretVault_prizesMain.jsp</result>
+      <result name="rules">/promotions/2024/2024-secretVault_rulesMain.jsp</result>
+      <result name="winners">/promotions/2024/2024-secretVault_winnersMain.jsp</result>
+      <result name="entry">/promotions/2024/2024-secretVault_ticketEntryMain.jsp</result>
+    </action> 
+
+   	<action name="*_2024-nascar" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">131</param>
+      <result name="howToPlay">/promotions/2024/2024-nascar_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2024/2024-nascar_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2024/2024-nascar_prizesMain.jsp</result>
+      <result name="rules">/promotions/2024/2024-nascar_rulesMain.jsp</result>
+      <result name="winners">/promotions/2024/2024-nascar_winnersMain.jsp</result>
+      <result name="entry">/promotions/2024/2024-nascar_ticketEntryMain.jsp</result>
+      <result name="coupon">/promotions/2024/2024-nascar_CouponMain.jsp</result>
+    </action> 
+   	
+  <action name="*_2024-cashCastle" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">129</param>
+      <result name="howToPlay">/promotions/2024/2024-cashCastle_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2024/2024-cashCastle_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2024/2024-cashCastle_prizesMain.jsp</result>
+      <result name="rules">/promotions/2024/2024-cashCastle_rulesMain.jsp</result>
+      <result name="winners">/promotions/2024/2024-cashCastle_winnersMain.jsp</result>
+      <result name="entry">/promotions/2024/2024-cashCastle_ticketEntryMain.jsp</result>
+    </action> 
+	<!-- Second Chance Promotions 2023 --> 
+   	<action name="*_2023-Xtreme" class="com.flalottery.secondchance.action.CouponPromoAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">128</param>
+      <result name="howToPlay">/promotions/2023/2023-Xtreme_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2023/2023-Xtreme_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2023/2023-Xtreme_prizesMain.jsp</result>
+      <result name="rules">/promotions/2023/2023-Xtreme_rulesMain.jsp</result>
+      <result name="winners">/promotions/2023/2023-Xtreme_winnersMain.jsp</result>
+      <result name="entry">/promotions/2023/2023-Xtreme_ticketEntryMain.jsp</result>
+      <result name="coupon">/promotions/2023/2023-Xtreme_CouponMain.jsp</result>
+    </action> 
+   
+    <action name="*_2023-fuelForLife" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">121</param>
+      <result name="howToPlay">/promotions/2023/2023-fuelForLife_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2023/2023-fuelForLife_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2023/2023-fuelForLife_prizesMain.jsp</result>
+      <result name="rules">/promotions/2023/2023-fuelForLife_rulesMain.jsp</result>
+      <result name="winners">/promotions/2023/2023-fuelForLife_winnersMain.jsp</result>
+      <result name="entry">/promotions/2023/2023-fuelForLife_ticketEntryMain.jsp</result>
+    </action> 
+
+    <action name="*_2023-comeOnDown" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">119</param>
+      <result name="howToPlay">/promotions/2023/2023-comeOnDown_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2023/2023-comeOnDown_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2023/2023-comeOnDown_prizesMain.jsp</result>
+      <result name="rules">/promotions/2023/2023-comeOnDown_rulesMain.jsp</result>
+      <result name="winners">/promotions/2023/2023-comeOnDown_winnersMain.jsp</result>
+      <result name="entry">/promotions/2023/2023-comeOnDown_ticketEntryMain.jsp</result>
+      <result name="games">/promotions/2023/2023-comeOnDown_gamesMain.jsp</result>      
+    </action>  
+	
+	<action name="*_2023-fantasy5" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">120</param>
+      <result name="howToPlay">/promotions/2023/2023-fantasy5_howtoplayMain.jsp</result>
+      <result name="prizes">/promotions/2023/2023-fantasy5_prizesMain.jsp</result>  
+    </action>  
+	
+	<!-- Second Chance Promotions 2022 --> 
+
+    <action name="*_2022-jackpotRaffle" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">116</param>
+      <result name="howToPlay">/promotions/2022/2022-jackpotRaffle_howtoplayMain.jsp</result>
+      <result name="prizes">/promotions/2022/2022-jackpotRaffle_prizesMain.jsp</result>
+      <result name="rules">/promotions/2022/2022-jackpotRaffle_rulesMain.jsp</result>
+      <result name="winners">/promotions/2022/2022-jackpotRaffle_winnersMain.jsp</result>
+    </action>  
+
+    <action name="*_2022-monopolyDoubler" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">115</param>
+      <result name="howToPlay">/promotions/2022/2022-monopolyDoubler_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2022/2022-monopolyDoubler_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2022/2022-monopolyDoubler_prizesMain.jsp</result>
+      <result name="rules">/promotions/2022/2022-monopolyDoubler_rulesMain.jsp</result>
+      <result name="winners">/promotions/2022/2022-monopolyDoubler_winnersMain.jsp</result>
+      <result name="entry">/promotions/2022/2022-monopolyDoubler_ticketEntryMain.jsp</result>
+    </action>  
+
+ 	<action name="*_2022-lottoBonusPlay" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">114</param>
+      <result name="howToPlay">/promotions/2022/2022-lottoBonus_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2022/2022-lottoBonus_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2022/2022-lottoBonus_prizesMain.jsp</result>
+      <result name="rules">/promotions/2022/2022-lottoBonus_rulesMain.jsp</result>
+      <result name="winners">/promotions/2022/2022-lottoBonus_winnersMain.jsp</result>
+      <result name="entry">/promotions/2022/2022-lottoBonus_ticketEntryMain.jsp</result>
+    </action>
+
+	    <!-- Second Chance Promotions 2021 --> 
+	    
+	<action name="*_2021-bonusPlayGetaway" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">111</param>
+      <result name="howToPlay">/promotions/2021/2021-bonusPlayGetaway_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2021/2021-bonusPlayGetaway_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2021/2021-bonusPlayGetaway_prizesMain.jsp</result>
+      <result name="rules">/promotions/2021/2021-bonusPlayGetaway_rulesMain.jsp</result>
+      <result name="winners">/promotions/2021/2021-bonusPlayGetaway_winnersMain.jsp</result>
+      <result name="entry">/promotions/2021/2021-bonusPlayGetaway_ticketEntryMain.jsp</result>
+    </action>
+    
+    
+    <action name="*_2021-guyharvey" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">109</param>
+      <result name="howToPlay">/promotions/2021/2021-guyharvey_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2021/2021-guyharvey_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2021/2021-guyharvey_prizesMain.jsp</result>
+      <result name="rules">/promotions/2021/2021-guyharvey_rulesMain.jsp</result>
+      <result name="winners">/promotions/2021/2021-guyharvey_winnersMain.jsp</result>
+      <result name="entry">/promotions/2021/2021-guyharvey_ticketEntryMain.jsp</result>
+    </action>  
+
+	<action name="*_2021-floridaJackpots" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">108</param>
+      <result name="howToPlay">/promotions/2021/2021-floridaJackpots_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2021/2021-floridaJackpots_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2021/2021-floridaJackpots_prizesMain.jsp</result>
+      <result name="rules">/promotions/2021/2021-floridaJackpots_rulesMain.jsp</result>
+      <result name="winners">/promotions/2021/2021-floridaJackpots_winnersMain.jsp</result>
+      <result name="entry">/promotions/2021/2021-floridaJackpots_ticketEntryMain.jsp</result>
+    </action>
+	 
+	 <!-- Second Chance Promotions 2020 --> 
+	    
+	<action name="*_2020-holidayBonusPlay" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">106</param>
+      <result name="howToPlay">/promotions/2020/2020-holidayBonusPlay_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2020/2020-holidayBonusPlay_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2020/2020-holidayBonusPlay_prizesMain.jsp</result>
+      <result name="rules">/promotions/2020/2020-holidayBonusPlay_rulesMain.jsp</result>
+      <result name="winners">/promotions/2020/2020-holidayBonusPlay_winnersMain.jsp</result>
+      <result name="entry">/promotions/2020/2020-holidayBonusPlay_ticketEntryMain.jsp</result>
+    </action> 	    
+	    
+    <action name="*_2020-monopolyBonus" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">105</param>
+      <result name="howToPlay">/promotions/2020/2020-monopolyBonus_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2020/2020-monopolyBonus_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2020/2020-monopolyBonus_prizesMain.jsp</result>
+      <result name="rules">/promotions/2020/2020-monopolyBonus_rulesMain.jsp</result>
+      <result name="winners">/promotions/2020/2020-monopolyBonus_winnersMain.jsp</result>
+      <result name="entry">/promotions/2020/2020-monopolyBonus_ticketEntryMain.jsp</result>
+    </action>    
+
+  <action name="*_2020-xMultiplier" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>      
+      <param name="promotionId">104</param>
+      <result name="howToPlay">/promotions/2020/2020-xMultiplier_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2020/2020-xMultiplier_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2020/2020-xMultiplier_prizesMain.jsp</result>
+      <result name="rules">/promotions/2020/2020-xMultiplier_rulesMain.jsp</result>
+      <result name="winners">/promotions/2020/2020-xMultiplier_winnersMain.jsp</result>
+      <result name="entry">/promotions/2020/2020-xMultiplier_ticketEntryMain.jsp</result>
+    </action>  
+	    
+  
+  <!-- Second Chance Promotions 2019 --> 
+
+  <action name="*_2019-holidayLuck" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">103</param>
+      <result name="howToPlay">/promotions/2019/2019-holidayLuck_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2019/2019-holidayLuck_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2019/2019-holidayLuck_prizesMain.jsp</result>
+      <result name="rules">/promotions/2019/2019-holidayLuck_rulesMain.jsp</result>
+      <result name="winners">/promotions/2019/2019-holidayLuck_winnersMain.jsp</result>
+      <result name="entry">/promotions/2019/2019-holidayLuck_ticketEntryMain.jsp</result>
+    </action>  
+  
+  
+  <action name="*_2019-cashPayday" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">102</param>
+      <result name="howToPlay">/promotions/2019/2019-cashPayday_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2019/2019-cashPayday_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2019/2019-cashPayday_prizesMain.jsp</result>
+      <result name="rules">/promotions/2019/2019-cashPayday_rulesMain.jsp</result>
+      <result name="winners">/promotions/2019/2019-cashPayday_winnersMain.jsp</result>
+      <result name="entry">/promotions/2019/2019-cashPayday_ticketEntryMain.jsp</result>
+    </action>
+  
+   <action name="*_2019-lottoCash" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">101</param>
+      <result name="howToPlay">/promotions/2019/2019-lottoCash_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2019/2019-lottoCash_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2019/2019-lottoCash_prizesMain.jsp</result>
+      <result name="rules">/promotions/2019/2019-lottoCash_rulesMain.jsp</result>
+      <result name="winners">/promotions/2019/2019-lottoCash_winnersMain.jsp</result>
+      <result name="entry">/promotions/2019/2019-lottoCash_ticketEntryMain.jsp</result>
+    </action>
+  
+  
+ <action name="*_2019-goldRushClassic" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">100</param>
+      <result name="howToPlay">/promotions/2019/2019-goldRushClassic_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2019/2019-goldRushClassic_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2019/2019-goldRushClassic_prizesMain.jsp</result>
+      <result name="rules">/promotions/2019/2019-goldRushClassic_rulesMain.jsp</result>
+      <result name="winners">/promotions/2019/2019-goldRushClassic_winnersMain.jsp</result>
+      <result name="entry">/promotions/2019/2019-goldRushClassic_ticketEntryMain.jsp</result>
+    </action>
+
+
+<!-- Second Chance Promotions 2018 --> 
+<action name="*_2018-holidayBonusFamily" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">99</param>
+      <result name="howToPlay">/promotions/2018/2018-holidayBonusFamily_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2018/2018-holidayBonusFamily_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2018/2018-holidayBonusFamily_prizesMain.jsp</result>
+      <result name="rules">/promotions/2018/2018-holidayBonusFamily_rulesMain.jsp</result>
+      <result name="winners">/promotions/2018/2018-holidayBonusFamily_winnersMain.jsp</result>
+      <result name="entry">/promotions/2018/2018-holidayBonusFamily_ticketEntryMain.jsp</result>
+    </action>
+    
+  <action name="*_2018-monopolyJackpot" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">98</param>
+      <result name="howToPlay">/promotions/2018/2018-monopolyJackpot_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2018/2018-monopolyJackpot_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2018/2018-monopolyJackpot_prizesMain.jsp</result>
+      <result name="rules">/promotions/2018/2018-monopolyJackpot_rulesMain.jsp</result>
+      <result name="winners">/promotions/2018/2018-monopolyJackpot_winnersMain.jsp</result>
+      <result name="entry">/promotions/2018/2018-monopolyJackpot_ticketEntryMain.jsp</result>
+    </action>
+  
+  <action name="*_2018-superGrouper" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">97</param>
+      <result name="howToPlay">/promotions/2018/2018-superGrouper_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2018/2018-superGrouper_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2018/2018-superGrouper_prizesMain.jsp</result>
+      <result name="rules">/promotions/2018/2018-superGrouper_rulesMain.jsp</result>
+      <result name="winners">/promotions/2018/2018-superGrouper_winnersMain.jsp</result>
+      <result name="entry">/promotions/2018/2018-superGrouper_ticketEntryMain.jsp</result>
+    </action>	
+  
+   <action name="*_2018-bonusBucks" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">96</param>
+      <result name="howToPlay">/promotions/2018/2018-bonusBucks_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2018/2018-bonusBucks_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2018/2018-bonusBucks_prizesMain.jsp</result>
+      <result name="rules">/promotions/2018/2018-bonusBucks_rulesMain.jsp</result>
+      <result name="winners">/promotions/2018/2018-bonusBucks_winnersMain.jsp</result>
+      <result name="entry">/promotions/2018/2018-bonusBucks_ticketEntryMain.jsp</result>
+    </action>	
+  
+  <action name="*_2018-cashSpectacular" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">95</param>
+      <result name="howToPlay">/promotions/2018/2018-cashSpectacular_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2018/2018-cashSpectacular_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2018/2018-cashSpectacular_prizesMain.jsp</result>
+      <result name="rules">/promotions/2018/2018-cashSpectacular_rulesMain.jsp</result>
+      <result name="winners">/promotions/2018/2018-cashSpectacular_winnersMain.jsp</result>
+      <result name="entry">/promotions/2018/2018-cashSpectacular_ticketEntryMain.jsp</result>
+    </action>
+	
+	
+ <!-- Second Chance Promotions 2017 --> 
+  <action name="*_2017-goldRushDoubler" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">93</param>
+      <result name="howToPlay">/promotions/2017/2017-goldRushDoubler_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2017/2017-goldRushDoubler_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2017/2017-goldRushDoubler_prizesMain.jsp</result>
+      <result name="rules">/promotions/2017/2017-goldRushDoubler_rulesMain.jsp</result>
+      <result name="winners">/promotions/2017/2017-goldRushDoubler_winnersMain.jsp</result>
+      <result name="entry">/promotions/2017/2017-goldRushDoubler_ticketEntryMain.jsp</result>
+    </action>
+    
+    <action name="*_2017-cashSupply" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">94</param>
+      <result name="howToPlay">/promotions/2017/2017-cashSupply_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2017/2017-cashSupply_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2017/2017-cashSupply_prizesMain.jsp</result>
+      <result name="rules">/promotions/2017/2017-cashSupply_rulesMain.jsp</result>
+      <result name="winners">/promotions/2017/2017-cashSupply_winnersMain.jsp</result>
+      <result name="entry">/promotions/2017/2017-cashSupply_ticketEntryMain.jsp</result>
+    </action>
+  
+  
+<!-- Second Chance Promotions 2016 -->
+ 	<action name="*_2016-cf-USF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">92</param>
+      <result name="howToPlay">/promotions/2016/2016-cf-USF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2016/2016-cf-USF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2016/2016-cf-USF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2016/2016-cf-USF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2016/2016-cf-USF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2016/2016-cf-USF_ticketEntryMain.jsp</result>
+     </action>
+    
+    <action name="*_2016-cf-UM" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">91</param>
+      <result name="howToPlay">/promotions/2016/2016-cf-UM_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2016/2016-cf-UM_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2016/2016-cf-UM_prizesMain.jsp</result>
+      <result name="rules">/promotions/2016/2016-cf-UM_rulesMain.jsp</result>
+      <result name="winners">/promotions/2016/2016-cf-UM_winnersMain.jsp</result>
+      <result name="entry">/promotions/2016/2016-cf-UM_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2016-cf-UF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">90</param>
+      <result name="howToPlay">/promotions/2016/2016-cf-UF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2016/2016-cf-UF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2016/2016-cf-UF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2016/2016-cf-UF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2016/2016-cf-UF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2016/2016-cf-UF_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2016-cf-UCF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">89</param>
+      <result name="howToPlay">/promotions/2016/2016-cf-UCF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2016/2016-cf-UCF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2016/2016-cf-UCF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2016/2016-cf-UCF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2016/2016-cf-UCF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2016/2016-cf-UCF_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2016-cf-FSU" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">88</param>
+      <result name="howToPlay">/promotions/2016/2016-cf-FSU_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2016/2016-cf-FSU_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2016/2016-cf-FSU_prizesMain.jsp</result>
+      <result name="rules">/promotions/2016/2016-cf-FSU_rulesMain.jsp</result>
+      <result name="winners">/promotions/2016/2016-cf-FSU_winnersMain.jsp</result>
+      <result name="entry">/promotions/2016/2016-cf-FSU_ticketEntryMain.jsp</result>
+    </action>
+
+	<action name="*_2016-monopoly" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">87</param>
+      <result name="howToPlay">/promotions/2016/2016-monopoly_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2016/2016-monopoly_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2016/2016-monopoly_prizesMain.jsp</result>
+      <result name="rules">/promotions/2016/2016-monopoly_rulesMain.jsp</result>
+      <result name="winners">/promotions/2016/2016-monopoly_winnersMain.jsp</result>
+      <result name="entry">/promotions/2016/2016-monopoly_ticketEntryMain.jsp</result>
+    </action>
+     
+    <action name="*_2016-beTheThunder" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">86</param>
+      <result name="howToPlay">/promotions/2016/2016-beTheThunder_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2016/2016-beTheThunder_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2016/2016-beTheThunder_prizesMain.jsp</result>
+      <result name="rules">/promotions/2016/2016-beTheThunder_rulesMain.jsp</result>
+      <result name="winners">/promotions/2016/2016-beTheThunder_winnersMain.jsp</result>
+      <result name="entry">/promotions/2016/2016-beTheThunder_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2016-cashMultiplier" class="com.flalottery.secondchance.action.SocialPromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">85</param>
+      <result name="howToPlay">/promotions/2016/2016-cashMultiplier_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2016/2016-cashMultiplier_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2016/2016-cashMultiplier_prizesMain.jsp</result>
+      <result name="rules">/promotions/2016/2016-cashMultiplier_rulesMain.jsp</result>
+      <result name="winners">/promotions/2016/2016-cashMultiplier_winnersMain.jsp</result>
+      <result name="entry">/promotions/2016/2016-cashMultiplier_ticketEntryMain.jsp</result>
+    </action>
+
+<!-- Second Chance Promotions 2015 -->        
+    <action name="*_2015-HolidayRaffle" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">84</param>
+      <result name="howToPlay">/promotions/2015/2015-HolidayRaffle_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-HolidayRaffle_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-HolidayRaffle_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-HolidayRaffle_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-HolidayRaffle_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-HolidayRaffle_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2015-cf-USF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">83</param>
+      <result name="howToPlay">/promotions/2015/2015-cf-USF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-cf-USF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-cf-USF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-cf-USF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-cf-USF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-cf-USF_ticketEntryMain.jsp</result>
+    </action>
+    
+    <action name="*_2015-cf-UM" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">82</param>
+      <result name="howToPlay">/promotions/2015/2015-cf-UM_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-cf-UM_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-cf-UM_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-cf-UM_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-cf-UM_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-cf-UM_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2015-cf-UF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">81</param>
+      <result name="howToPlay">/promotions/2015/2015-cf-UF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-cf-UF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-cf-UF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-cf-UF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-cf-UF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-cf-UF_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2015-cf-UCF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">80</param>
+      <result name="howToPlay">/promotions/2015/2015-cf-UCF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-cf-UCF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-cf-UCF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-cf-UCF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-cf-UCF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-cf-UCF_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2015-cf-FSU" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">79</param>
+      <result name="howToPlay">/promotions/2015/2015-cf-FSU_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-cf-FSU_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-cf-FSU_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-cf-FSU_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-cf-FSU_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-cf-FSU_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2015-GuyHarvey" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">78</param>
+      <result name="howToPlay">/promotions/2015/2015-guyHarvey_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-guyHarvey_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-guyHarvey_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-guyHarvey_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-guyHarvey_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-guyHarvey_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2015-Payday" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">77</param>
+      <result name="howToPlay">/promotions/2015/2015-Payday_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-Payday_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-Payday_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-Payday_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-Payday_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-Payday_ticketEntryMain.jsp</result>
+    </action>
+    
+    <action name="*_2015-OrlandoMagic" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">75</param>
+      <result name="howToPlay">/promotions/2015/2015-OrlandoMagic_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-OrlandoMagic_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-OrlandoMagic_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-OrlandoMagic_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-OrlandoMagic_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-OrlandoMagic_ticketEntryMain.jsp</result>
+    </action>
+  
+    <action name="*_2015-CashMine" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">74</param>
+      <result name="howToPlay">/promotions/2015/2015-CashMine_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2015/2015-CashMine_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2015/2015-CashMine_prizesMain.jsp</result>
+      <result name="rules">/promotions/2015/2015-CashMine_rulesMain.jsp</result>
+      <result name="winners">/promotions/2015/2015-CashMine_winnersMain.jsp</result>
+      <result name="entry">/promotions/2015/2015-CashMine_ticketEntryMain.jsp</result>
+    </action>
+    
+<!-- Second Chance Promotions 2014 -->        
+    <action name="*_2014-DreamMakeover" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">73</param>
+      <result name="howToPlay">/promotions/2014/2014-DreamMakeover_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-DreamMakeover_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-DreamMakeover_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-DreamMakeover_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-DreamMakeover_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-DreamMakeover_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2014-Britto" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">72</param>
+      <result name="howToPlay">/promotions/2014/2014-Britto_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-Britto_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-Britto_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-Britto_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-Britto_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-Britto_ticketEntryMain.jsp</result>
+    </action>
+    
+    <action name="*_2014-Jaguars" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">71</param>
+      <result name="howToPlay">/promotions/2014/2014-Jaguars_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-Jaguars_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-Jaguars_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-Jaguars_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-Jaguars_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-Jaguars_ticketEntryMain.jsp</result>
+    </action>
+    
+    <action name="*_2014-Dolphins" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">70</param>
+      <result name="howToPlay">/promotions/2014/2014-Dolphins_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-Dolphins_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-Dolphins_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-Dolphins_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-Dolphins_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-Dolphins_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2014-Buccaneers" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">69</param>
+      <result name="howToPlay">/promotions/2014/2014-Buccaneers_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-Buccaneers_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-Buccaneers_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-Buccaneers_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-Buccaneers_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-Buccaneers_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2014-cf-USF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">68</param>
+      <result name="howToPlay">/promotions/2014/2014-cf-USF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-cf-USF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-cf-USF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-cf-USF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-cf-USF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-cf-USF_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2014-cf-UM" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">67</param>
+      <result name="howToPlay">/promotions/2014/2014-cf-UM_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-cf-UM_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-cf-UM_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-cf-UM_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-cf-UM_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-cf-UM_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2014-cf-UF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">66</param>
+      <result name="howToPlay">/promotions/2014/2014-cf-UF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-cf-UF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-cf-UF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-cf-UF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-cf-UF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-cf-UF_ticketEntryMain.jsp</result>
+    </action>
+    
+    <action name="*_2014-cf-UCF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">65</param>
+      <result name="howToPlay">/promotions/2014/2014-cf-UCF_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-cf-UCF_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-cf-UCF_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-cf-UCF_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-cf-UCF_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-cf-UCF_ticketEntryMain.jsp</result>
+    </action>
+
+    <action name="*_2014-cf-FSU" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+      <interceptor-ref name="promotionStack"/>
+      <param name="promotionId">64</param>
+      <result name="howToPlay">/promotions/2014/2014-cf-FSU_howtoplayMain.jsp</result>
+      <result name="howToClaim">/promotions/2014/2014-cf-FSU_howtoclaimMain.jsp</result>
+      <result name="prizes">/promotions/2014/2014-cf-FSU_prizesMain.jsp</result>
+      <result name="rules">/promotions/2014/2014-cf-FSU_rulesMain.jsp</result>
+      <result name="winners">/promotions/2014/2014-cf-FSU_winnersMain.jsp</result>
+      <result name="entry">/promotions/2014/2014-cf-FSU_ticketEntryMain.jsp</result>
+    </action>
+    
+		<action name="*_2014-JackpotFamily" class="com.flalottery.secondchance.action.JackpotPromotionAction" method="{1}">
+			<interceptor-ref name="promotionStack"/>
+			<param name="promotionId">63</param>
+			<result name="howToPlay">/promotions/2014/2014-jackpotFamily_howtoplayMain.jsp</result>
+			<result name="howToClaim">/promotions/2014/2014-jackpotFamily_howtoclaimMain.jsp</result>
+			<result name="prizes">/promotions/2014/2014-jackpotFamily_prizesMain.jsp</result>
+			<result name="rules">/promotions/2014/2014-jackpotFamily_rulesMain.jsp</result>
+			<result name="winners">/promotions/2014/2014-jackpotFamily_winnersMain.jsp</result>
+			<result name="entry">/promotions/2014/2014-jackpotFamily_ticketEntryMain.jsp</result>
+		</action>
+				
+		<action name="*_2014-Margaritaville" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+			<interceptor-ref name="promotionStack"/>
+			<param name="promotionId">62</param>
+			<result name="howToPlay">/promotions/2014/2014-margaritaville_howtoplayMain.jsp</result>
+			<result name="howToClaim">/promotions/2014/2014-margaritaville_howtoclaimMain.jsp</result>
+			<result name="prizes">/promotions/2014/2014-margaritaville_prizesMain.jsp</result>
+			<result name="rules">/promotions/2014/2014-margaritaville_rulesMain.jsp</result>
+			<result name="winners">/promotions/2014/2014-margaritaville_winnersMain.jsp</result>
+			<result name="entry">/promotions/2014/2014-margaritaville_ticketEntryMain.jsp</result>
+		</action>
+		
+		<action name="*_2014-MiamiHeat" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+			<interceptor-ref name="promotionStack"/>
+			<param name="promotionId">61</param>
+			<result name="howToPlay">/promotions/2014/2014-miamiHeat_howtoplayMain.jsp</result>
+			<result name="howToClaim">/promotions/2014/2014-miamiHeat_howtoclaimMain.jsp</result>
+			<result name="prizes">/promotions/2014/2014-miamiHeat_prizesMain.jsp</result>
+			<result name="rules">/promotions/2014/2014-miamiHeat_rulesMain.jsp</result>
+			<result name="winners">/promotions/2014/2014-miamiHeat_winnersMain.jsp</result>
+			<result name="entry">/promotions/2014/2014-miamiHeat_ticketEntryMain.jsp</result>
+		</action>
+
+		<action name="*_2014-CashFamily" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+			<interceptor-ref name="promotionStack"/>
+			<param name="promotionId">60</param>
+			<result name="howToPlay">/promotions/2014/2014-CashFamily_howtoplayMain.jsp</result>
+			<result name="howToClaim">/promotions/2014/2014-CashFamily_howtoclaimMain.jsp</result>
+			<result name="prizes">/promotions/2014/2014-CashFamily_prizesMain.jsp</result>
+			<result name="rules">/promotions/2014/2014-CashFamily_rulesMain.jsp</result>
+			<result name="winners">/promotions/2014/2014-CashFamily_winnersMain.jsp</result>
+			<result name="entry">/promotions/2014/2014-CashFamily_ticketEntryMain.jsp</result>
+		</action>
+		
+		<action name="*_2014-Flamingo" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+			<interceptor-ref name="promotionStack"/>
+			<param name="promotionId">59</param>
+			<result name="howToPlay">/promotions/2014/2014-flamingo_howtoplayMain.jsp</result>
+			<result name="howToClaim">/promotions/2014/2014-flamingo_howtoclaimMain.jsp</result>
+			<result name="prizes">/promotions/2014/2014-flamingo_prizesMain.jsp</result>
+			<result name="rules">/promotions/2014/2014-flamingo_rulesMain.jsp</result>
+			<result name="winners">/promotions/2014/2014-flamingo_winnersMain.jsp</result>
+			<result name="entry">/promotions/2014/2014-flamingo_ticketEntryMain.jsp</result>
+		</action>
+		
+<!-- Second Chance Promotions 2013 -->        
+		<action name="*_2013-HOF" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+			<interceptor-ref name="promotionStack"/>
+			<param name="promotionId">58</param>
+			<result name="howToPlay">/promotions/2013/2013-hof_howtoplayMain.jsp</result>
+			<result name="howToClaim">/promotions/2013/2013-hof_howtoclaimMain.jsp</result>
+			<result name="prizes">/promotions/2013/2013-hof_prizesMain.jsp</result>
+			<result name="rules">/promotions/2013/2013-hof_rulesMain.jsp</result>
+			<result name="winners">/promotions/2013/2013-hof_winnersMain.jsp</result>
+			<result name="entry">/promotions/2013/2013-hof_ticketEntryMain.jsp</result>
+		</action>
+		
+		<action name="*_2013-Gridiron" class="com.flalottery.secondchance.action.MultiplePromotionAction" method="{1}">
+			<interceptor-ref name="promotionStack"/>
+			<param name="multiplePromotionIds">56, 57</param>
+			<param name="websitePromotionName">Gridiron</param>
+			<result name="howToPlay">/promotions/2013/2013-gridiron_howtoplayMain.jsp</result>
+			<result name="howToClaim">/promotions/2013/2013-gridiron_howtoclaimMain.jsp</result>
+			<result name="prizes">/promotions/2013/2013-gridiron_prizesMain.jsp</result>
+			<result name="rules">/promotions/2013/2013-gridiron_rulesMain.jsp</result>
+			<result name="winners">/promotions/2013/2013-gridiron_winnersMain.jsp</result>
+			<result name="entry">/promotions/2013/2013-gridiron_ticketEntryMain.jsp</result>
+		</action>
+		
+		<action name="*_2013-GuyHarvey" class="com.flalottery.secondchance.action.PromotionAction" method="{1}">
+			<interceptor-ref name="promotionStack"/>
+			<param name="promotionId">55</param>
+			<result name="howToPlay">/promotions/2013/2013-guyHarvey_howtoplayMain.jsp</result>
+			<result name="howToClaim">/promotions/2013/2013-guyHarvey_howtoclaimMain.jsp</result>
+			<result name="prizes">/promotions/2013/2013-guyHarvey_prizesMain.jsp</result>
+			<result name="rules">/promotions/2013/2013-guyHarvey_rulesMain.jsp</result>
+			<result name="winners">/promotions/2013/2013-guyHarvey_winnersMain.jsp</result>
+			<result name="entry">/promotions/2013/2013-guyHarvey_ticketEntryMain.jsp</result>
+		</action>
+		
+		
+	
+
+    		<!-- These are used only during unit testing. -->	
+		<!-- 
+		<action name="ticketEntry_test" class="com.flalottery.secondchance.action.PromotionAction" method="entry">
+			<interceptor-ref name="promotionStack"/>
+			<result name="entry">/promotions/2014/2014-CashFamily_ticketEntryMain.jsp</result>
+		</action>
+		
+		<action name="test">
+			<result>/test.jsp</result>
+		</action>
+		-->
+	</package>
+</struts>

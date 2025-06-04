@@ -1,0 +1,379 @@
+@charset "utf-8";
+/**
+ * @file 			2021-bonusPlayGetaway
+ *
+ * The selector below is used to keep this template from interfering with other
+ * promotional pages. The ID (#main) should remain the same but the class (.holiday)
+ * should be changed for each new promotion.
+ *
+ * HINT: Perform and "find and replace all" for and replace with
+ * #main.(new_promo) before modifying the new template.
+ */
+{
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 13px;
+}
+
+/**89110e
+ * Page headings and standard links
+ */
+h1 {
+	color: #0E0B0F;
+	font-size: 2em;
+	border-bottom: 1px solid #00492e;
+	text-transform: uppercase;
+}
+h2 { 
+	color: #0E0B0F;
+	font-size: 1.8em;
+	text-transform: uppercase;
+	text-align: left;
+}
+h3 { font-weight: bold; 
+	color: #0E0B0F;
+	font-size: 1.2em;
+	text-align: center; text-transform: uppercase;
+}
+
+a {
+	color: #0E0B0F;
+	text-decoration: none;
+}
+a:hover {
+	color: #00492e;
+}
+a:active, a:link  {
+    color: #89110e;
+    font-weight: bold;
+    outline: none;
+}
+a:visited {
+    color: #0E0B0F;
+    font-weight: bold;
+    outline: none;
+}
+
+#mainContentWrap {
+	padding: 0px 20px;
+}
+
+ol li { 
+	margin-bottom: 8px;
+}
+
+/**
+ * Navigation menu
+ */
+#gameNav {
+  background-color: #0E0B0F;
+}
+
+#gameNav ul,
+#gameNav ul a:link,
+#gameNav ul a:visited {
+	color: #FFF;
+}
+
+#gameNav ul li {
+	border-right: 1px #FFF solid;
+	border-left: 1px #FFF solid;
+}
+
+#gameNav ul li.active span,
+#gameNav ul li.active a:hover span {
+	color: #FFF;
+}
+
+#gameNav ul a:hover span {
+	color: #fecf5c;
+}
+
+#gameNav ul li.inactive span {
+	color: #CCC;
+}
+
+th.htpLast{
+	background-color: #000;
+	color: #fff;
+}
+a.htpButton{
+	border-radius: 8px;
+	background-color: #DD1E3A;
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	border: none;
+	height: 40px;
+	width: 200px;
+	text-align:center;
+	margin-left: 37%;
+	display: inline-block;
+	line-height: 40px;
+}
+
+p.htpFootnote{
+	text-align: center;
+	margin-top: 10px;
+}
+/**
+ * Table styles
+ */
+table.dataTbl {
+	word-wrap: normal;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	-webkit-box-shadow: none;
+	-webkit-border-radius: 0px;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    width: 875px;
+}
+
+table.dataTbl th{
+	background-color: #0E0B0F ;
+	color: #FFFFFF;
+	padding: 20px;
+}
+
+
+table.dataTbl th.golden{
+	background-color: #DD1E3A ;
+	color: #FFFFFF;
+	padding: 20px;
+}
+
+table.dataTbl th.wide{
+	width: 350px;
+}
+
+table.dataTbl th.entry{
+	background-color: #0E0B0F ;
+	color: #FFFFFF;
+	padding: 20px;
+}
+
+table.dataTbl th.entry:focused:after{
+	content: "Ascend"
+}
+
+
+
+tbody tr:nth-child(odd) {
+            background-color: rgb(230, 230, 230);
+ }
+ 
+ tbody tr.white {
+            background-color: #FFFFFF;
+ }
+
+th.dataTblLast {
+	background-color: rgb(0, 0, 0);
+	color: #fff;
+	padding: 20px;
+}
+table.dataTbl td{
+	padding: 10px;
+	width: 175px;
+}
+
+
+table.secondTbl td{
+	padding: 10px;
+	border: 0.1px solid black;
+	vertical-align: middle;
+}
+table.secondTbl {
+	width: 750px;
+}
+
+
+
+tr.bottom{
+	background: linear-gradient(to bottom,  #FFFFFF 40%, #e7a6cf 100%);
+}
+ 
+td.middle{
+	background:	#e6dee8;
+}
+
+td.middleBottom{
+	background: linear-gradient(to bottom,  #e6dee8 40%, #e7a6cf 100%);
+}
+
+table.winners {
+	width: 100%; margin: 30px auto 25px;
+	padding: 0px;
+	text-align: center;
+	background: #fff;
+    border: 2px solid rgb(0, 0, 0);
+	box-shadow: 2px 2px 3px rgb(51, 51, 51);
+	border-collapse: separate;
+	border-spacing: 0px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+}
+
+th.entryPer {
+	background: linear-gradient(to bottom,  #0093A5 2%, #4CC0BA 98%);
+}
+
+table.winners td, table.winners th {text-align: center; vertical-align: middle; padding-left: 10px;}
+
+.winnersReport {width: 97%; margin: 0 auto;}
+
+.winnersReport h1.title, .winnersReport2 h1.title {
+	font-size: 16px;
+	margin: 10px 0 6px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	border-bottom: none;
+	color: #000000;
+}
+
+/**
+ * Sample Ticket
+ */
+
+div#mainContent div#sampleTicket { float: right; text-align: right; margin: -15px -10px 20px 20px; padding: 5px; position: relative; }
+div#sampleTicket p { text-align: center; font-weight: bold; margin: 0;}
+div#mainContent div#sampleTicket p.tktSmall1 { margin-top: -40px; width:100px; font-size: 12px; }
+div#mainContent div#sampleTicket p.tktSmall2 { margin-top: 6px; padding-left: 120px; width: 175px; font-size: 9px; }
+div#top {display: grid; grid-template: "a b" "c b";}
+div#instructions {grid-area: a}
+div#tickets {grid-row: 1/3; grid-column: 3/4; display: grid; grid-template: "a b"; margin-left: -200px;}
+div#tickets div.tkt1{grid-area: a; margin-top: 100px;}
+div#tickets div.tkt2{grid-area: b;margin-top: 6px;}
+
+form#ticketEntryForm { margin: 20px 2px 20px 40px;}
+form#ticketEntryForm input.tktNumber {border: 2px solid #000; margin: 0px; width:180px; text-transform:uppercase; text-align:center;}
+form#ticketEntryForm input.tktNumberPin {border: 2px solid #000; width:100px; text-transform:uppercase; text-align:center;}
+form#ticketEntryForm p.ticketNumberNote { margin: -10px 0 0 50px;}
+form#ticketEntryForm span.tktNumber {margin: -20px 0 0 25px}
+form#ticketEntryForm input.promoCode { border: 2px solid #000; margin: 20px 2px 5px 0; width:180px; text-transform:uppercase; text-align:center;}
+form#ticketEntryForm p.promoCodeNote, span.promoCodeNote { font-size: 11px; margin: -10px 0 0 65px;}
+
+
+form#ticketEntryForm input.ticketSubmit, form#ticketEntryForm button.ticketSubmit {
+ background: rgb(216,36,62);
+ background: linear-gradient(0deg, rgba(216,36,62,1) 57%, rgba(239,88,79,1) 100%);
+  height: 24px;
+  color: #fff !important;
+  border-radius: 1px;
+}
+
+button.submit {
+	background: rgb(216,36,62);
+ 	background: linear-gradient(0deg, rgba(216,36,62,1) 57%, rgba(239,88,79,1) 100%);
+  	height: 24px;
+  	color: #fff !important;
+  	border: none;
+}
+
+
+h2.tktEntry {position: absolute; bottom: 335px; color: #231F20; margin: 30px 0 -20px 0; font-size: 120%; font-weight: bold; text-align: left; text-transform: none; width:100%;}
+table.dataTbl tbody tr td.row_2 {text-align: center; padding: 12px; font-weight: bold; font-size:14px;}
+h2.tktEntry span { color: #231F20;}
+
+h1.title {
+	border: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 10px 0px 6px;
+	text-align: center;
+}
+
+h2.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px;
+  text-align: center;
+  color:#07366A;
+}
+
+.xmulti{ margin-top: 800px;
+}
+
+p.winReportNote {
+  font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: left;
+	margin: 8px 5px 10px;
+}
+
+p.hours {
+	 color: #572564;
+	 font-size: 14px;
+	 font-weight: bold;
+	 text-align: center;
+	 text-transform: uppercase;
+}
+
+p.individualTicket {
+	 color: #572564;
+	 margin: 0px 100px 0px 100px;
+	 text-align: center;
+	 font-size: 12px;
+	
+}
+
+div#subNav { margin: 10px -50px 0 0; width: 290px; }
+
+#subNavContent { width: 230px; color: #572564; }
+
+#subNavContent h3 {
+	color: #572564;
+}
+
+#subNavContent ul li {
+	color: #89110e;
+}
+#subNavContent ul a {
+	color: #572564;
+}
+#subNavContent ul a:hover {
+	color: #fecf5c;
+}
+#subNavContent ul a:visited {
+	color: #572564;
+
+	/*text-shadow: 1px 1px 2px rgb(17, 17, 17); */
+}
+.winnersReport h2.subtitle, .winnersReport2 h2.subtitle {
+	color: #000000;
+}
+.toIframe ul a:visited {
+	color: #F9E48C;
+}
+
+div.postInput{
+	margin-top: -90px;
+	grid-area: c;
+	width: 550px;
+}
+
+p.postTime{
+	text-align:center;
+	line-height: 20px;
+}
+
+.fuelForLife h2 { color: #07366A; }
+
+.fuelForLife div.winnersReport table thead td {background: #000000; color: #FFFFFF; font-weight:bold;}
+
+.fuelForLife div.winnersReport table thead th { background-color: #FFFFFF;}
+.fuelForLife div.winnersReport table tbody tr:nth-child(even) {
+            background: #0E0B0F;
+ }
+ 
+ 
+@media only screen and (max-device-width: 480px){
+  .scanButton {
+  	display: block;
+  }
+}

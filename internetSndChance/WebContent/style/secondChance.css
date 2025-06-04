@@ -1,0 +1,1419 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* The Apache License Version 2 for Open Sans can be found at this permalink: http://www.fontsquirrel.com/license/open-sans */
+@font-face {
+    font-family: 'open_sans';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sans';
+    src: url('../fonts/opensans-bold-webfont.eot');
+    src: url('../fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-bold-webfont.woff') format('woff'),
+         url('../fonts/opensans-bold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sans_extrabold';
+    src: url('../fonts/opensans-extrabold-webfont.eot');
+    src: url('../fonts/opensans-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-extrabold-webfont.woff') format('woff'),
+         url('../fonts/opensans-extrabold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-extrabold-webfont.svg#open_sans_extraboldregular') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/*Begin new styles for April 2013 redesign */
+html {
+	margin: 0;
+	padding: 0;
+	background: #006C67 url(../images/png/second_chance_bkg_2024.png) no-repeat center 185px;
+}
+
+body {
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+
+q:before, q:after {
+	content: '';
+}
+
+abbr, acronym {
+	font-variant: normal;
+	border: 0;
+	/*indicating to users that more info is available */
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+sup, sub {
+   vertical-align: baseline;
+   position: relative;
+   top: -0.4em;
+   font-size: 80%;
+}
+sub { top: 0.4em; }
+
+input,textarea,select {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+/*to enable resizing for IE*/
+input, textarea, select {
+	*font-size: 100%;
+}
+
+legend {
+	color:#000;
+}
+
+i, em {
+	font-style: italic;
+}
+
+b, strong {
+	font-weight: bold; 
+}
+
+a:link {
+	color: #db4d69;
+	font-weight: bold;
+	outline: none;
+}
+
+a:visited {
+	color: #db4d69;
+	font-weight: bold;
+	outline: none;
+}
+
+a.ltWeight:link, a.ltWeight:hover, a.ltWeight:visited {
+	font-weight: normal;
+}
+
+a:hover, a.ltWeight:hover {
+	color: #00675A;
+	text-decoration: underline;
+}
+
+blockquote,ul,ol,dl { /*giving blockquotes and lists room to breathe*/
+	margin: 1em;
+}
+
+ol,ul,dl { /*bringing lists on to the page with breathing room */
+	margin-left: 2em;
+}
+
+ul.ulWithTitle {
+	margin-top: 5px;
+}
+
+dl dd {
+	margin-left:1em;
+}
+
+legend {
+	font-size: 138.5%;
+}
+
+form label {
+	font-size: 85%;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 2px;
+}
+
+input, select {
+	background-color: #F5F5F5;
+	border: 1px solid #CCC;
+	padding: 2px;
+}
+
+caption {
+	text-align: center;
+	font-weight: bold;
+}
+
+table {
+	position: relative;
+	font-size: 12px;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #000;
+	border-radius: 7px;
+	-webkit-box-shadow: 2px 2px 3px #333;
+	box-shadow: 2px 2px 3px #333;
+	background-color: #ffffff;
+	border-collapse: separate;
+	border-spacing: 0;
+	behavior: url(style/PIE.htc);
+}
+
+th {
+	font-weight: bold;
+	text-align: center;
+}
+
+table td {
+	padding: 2px;
+}
+
+table thead tr:first-child, table thead tr th:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+table thead tr:last-child, table thead tr th:last-child {
+    border-radius: 0 5px 0 0;
+}
+
+table tr:last-child td:first-child {
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+table tr:last-child td:last-child {
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+table.plainTable {
+	border: none;
+	width: 800px;
+	border-radius: 0;
+	box-shadow: none;
+	background-color: transparent;
+}
+
+p,fieldset { /*so things don't run into each other*/
+	margin-bottom: 1em;
+}
+
+h1 {
+	font-family: "Arial Black", Gadget, Arial, sans-serif;
+	font-weight: 900;
+	font-size: 174%;
+	color: #000000;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 153.9%;
+	font-weight: bold;
+}
+
+h2.ticketEntry {
+	margin-bottom: .25em;
+	clear: both;
+}
+
+h3 {
+	font-size: 116%;
+	margin-bottom: 5px;
+}
+
+h5 {
+	font-weight: bold;
+}
+
+.skipNavigation { visibility: hidden; position: absolute; top: -100px; left: 0; }
+
+p#enableJavaScript {
+	padding: 1em;
+	background-color: #000;
+	color: #fff;
+	margin: 0;
+	font-weight: bold;
+	font-size: 93%;
+}
+
+.clear {
+	clear: both;
+}
+
+#siteHeader {
+ 	position: relative;
+	width: 960px;
+	height: 145px;
+	margin: 0 auto;
+	padding: 0;
+	z-index: 10;
+}
+
+#lotteryLogo {
+	position: absolute;
+	top: 14px;
+}
+
+#siteLogo {
+	position: absolute;
+	top: 40px;
+	left: 140px;
+	text-decoration: none;
+	color: #FFFFFF;
+	width: 500px;
+	font-size: 28px;
+}
+
+.loginMessage {
+	color: #C60C30;
+	font-weight: bold;
+}
+
+.loginForm {
+	position: relative;
+	font-family: 'open_sans', Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #ffffff;
+	float: right;
+	text-align: right;
+	margin: 20px 0 0 0;
+}
+
+.loginForm div {
+	margin: 0 0 9px 0;
+	padding: 0;
+}
+
+.loginForm label {
+	display: inline;
+	font-size: 100%;
+	font-weight: normal;
+	padding: 0;
+	margin-right: 3px;
+}
+
+.loginForm input {
+	background-color: #fff;
+	border: none;
+	font-size: 100%;
+	outline: none;
+}
+
+.loginForm input.inputText {
+	position: relative;
+	height: 22px;
+	padding: 1px 12px;
+	line-height: 20px;
+	border-radius: 2px;
+	width: 200px;
+	behavior: url(style/PIE.htc);
+	float: left;
+}
+
+.loginForm input.password {
+	margin-top: 5px;
+	width: 170px;
+}
+
+.loginForm .submitButtonHeader {
+	position: absolute;
+	top: 39.38px;
+	right: -10px;
+	margin: 0;
+	width: 35px;
+	height: 30px;
+	overflow: hidden;
+	background: transparent url(../images/png/submit_button_2024.png) no-repeat 0 0;
+	outline: none;
+}
+
+.loginForm .submitButtonHeader a:link,.loginForm .submitButtonHeader a:active {
+	background-position: 0 0;
+}
+
+.loginForm .submitButtonHeader:hover {
+	background-position: 0 -31px;
+}
+
+.loginForm .register {
+	float: left;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.loginForm .register a {
+	color: #ffffff;
+	font-weight: normal;
+	margin-left: 3px;
+}
+
+.loginForm .register a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+.loggedIn {
+	font-weight: bold;
+}
+
+nav#mainNav {
+	position: relative;
+	height: 30px;
+	background-color: #015953;
+	/*border-bottom: 1px solid #1c1d22;*/
+	border-radius: 5px 5px 0 0;
+	/*box-shadow: -2px -2px 10px -6px #111, 4px -1px 10px -6px #111;*/
+	width: 960px;
+	margin: 0 auto;
+	z-index: 3;
+	text-align: right;
+	behavior: url(style/PIE.htc);
+}
+
+nav#mainNav, nav.footerNav {
+	color: #ffffff;
+	font-family: 'open_sans', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+nav#mainNav ul, nav.accountNav ul {
+	position: absolute;
+	top: 0;
+	right: 14px;
+	margin: 0 auto;
+	list-style-type: none;
+	display: inline-block;
+	padding: 0;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: middle;
+}
+
+nav#mainNav ul li, nav.accountNav ul li, nav.footerNav ul li {
+	float: left;
+	width: auto;
+	margin: 0 10px;
+}
+
+nav#mainNav a, nav.accountNav a, nav.footerNav a {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: normal;
+	outline: none;
+}
+
+nav#mainNav a:hover, nav.accountNav a:hover, nav.footerNav a:hover {
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+nav#mainNav ul li.promoMenu, nav.accountNav ul li.promoMenu {
+	padding-bottom: 20px;
+}
+
+nav#mainNav ul li.promoMenu > a, nav.accountNav ul li.promoMenu > a, nav.accountNav ul li.promoMenu > a {
+	display: inline-block;
+	line-height: 10px;
+	padding-right: 30px;
+	background: url(../images/png/promoArrow_2024.png) no-repeat right -25px;
+}
+
+nav#mainNav ul li.promoMenu > a:hover, nav.accountNav ul li.promoMenu > a:hover {
+	background-position: right 0px;
+}
+
+nav#mainNav ul li.promoMenu > a, nav#mainNav ul li.promoMenu > a:hover {
+	font-weight: normal;
+	font-size: 13px;
+}
+
+nav#mainNav ul li.promoMenu > a { color: #FFFFFF; }
+nav#mainNav ul li.promoMenu > a:hover { color: #000000; }
+
+div.allPromotions {
+	display: none;
+	position: absolute;
+	top: 30px;
+	right: 0;
+	width: 135px;
+	padding: 0 10px 2px 10px;
+	background-color: #FFFFFF;
+	filter: alpha(opacity=93); /* For IE8 and earlier */
+	behavior: url(style/PIE.htc);
+	text-align: left;
+}
+
+.promoMenu:hover div.allPromotions {
+	display: block;
+}
+
+div.allPromotions p.closedTitle {
+	margin: 1px -10px 0 -10px;
+	padding: 0 4px 0 12px;
+	border-bottom: 2px solid #006C67;
+	color: #000;
+	font-weight: bold;
+	font-size: 11px;
+	height: 26px;
+	line-height: 26px;
+	vertical-align: middle;
+}
+
+.smartling-es div.allPromotions p.closedTitle {
+	padding: 1px 1px 0 3px;
+}
+
+div.allPromotions ul {
+	position: relative;
+	margin: 0 auto;
+	list-style-type: none;
+	display: inline-block;
+	padding: 0;
+}
+
+div.allPromotions ul li {
+	padding: 5px;
+	border-bottom: 1px solid #000000;
+	font-size: 11px;
+	color: #1c1d22;
+	line-height: normal;
+}
+
+div.allPromotions ul li.lastPromo {
+	border-bottom: none;
+}
+
+nav#mainNav ul li.promoMenu div.allPromotions ul {
+	position: relative;
+	margin: 0 10px;
+	height: 100%;
+}
+
+nav#mainNav ul li.promoMenu div.allPromotions ul li {
+	margin: 0 auto;
+	width: 125px;
+	padding: 8px 5px;
+}
+
+nav#mainNav ul li.promoMenu div.allPromotions ul li a, nav.accountNav ul li.promoMenu div.allPromotions ul li a {
+	color: #1c1d22;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+nav#mainNav ul li.promoMenu div.allPromotions ul li a:hover, nav.accountNav ul li.promoMenu div.allPromotions ul li a:hover {
+	color: #db4d69;
+	text-decoration: none;
+}
+
+nav.accountNav ul li div.allPromotions {
+	position: absolute;
+	top: 26px;
+	right: 16px;
+	width: 110px;
+}
+
+nav.accountNav ul li div.allPromotions ul {
+	margin: 0;
+	height: 100%;
+}
+
+nav.accountNav ul li div.allPromotions ul li {
+	padding: 5px;
+	width: 100px;
+}
+
+#subNav {
+	float: right;
+	width: 235px;
+	height: auto;
+	margin: 10px 0 0 15px;
+	display: inline;
+	background-color: #FFFFFF;
+}
+
+#subNavContent {
+	width: 195px;
+	margin: 0 5px 25px 30px;
+	border-left: 1px solid #9c9c9c;
+	padding: 5px 5px 5px 15px;
+	color: #888888;
+}
+
+#subNavContent ul {
+	font-weight: bold;
+	margin-left: 12px;
+}
+
+#subNavContent ul li {
+	margin-bottom: 12px;
+	padding-left: 0;
+}
+
+#subNavContent ul a {
+	text-decoration: none;
+}
+
+#subNavContent ul a:hover {
+	text-decoration: none;
+}
+
+#subNavContent ul li img {
+	margin-left: 9px;
+	border-left: 1px solid #888888;
+	vertical-align: middle;
+}
+
+#subNavContent h3 {
+	color: #555555;
+	margin-bottom: 14px;
+	font-style: italic;
+}
+
+/*Begin Game Nav*/
+#gameNav {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	width: 960px;
+	height: 40px;
+}
+
+#gameNav ul {
+    position: relative;
+	display: inline-block;
+	height: 40px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+	font-size: 123.1%;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#gameNav ul li {
+	float: left;
+	list-style-type: none;
+	font-weight: bold;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	height: 40px;
+}
+
+#gameNav ul li span {
+	padding: 0 39px; 
+	line-height: 40px;
+	float: left;
+	height: 40px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.smartling-es #gameNav ul li span {
+	padding: 0 22px !important;
+}
+
+#gameNav ul li.active span, #gameNav ul li.active a:hover span {
+	text-decoration: none;
+	cursor: default;
+}
+
+#gameNav ul a:link, #gameNav ul a:visited {
+	text-decoration: none;
+}
+
+#gameNav ul a:link, #gameNav ul a:visited {
+	text-decoration: none;
+}
+
+#gameNav ul a:hover span {
+	text-decoration: underline;
+}
+
+#gameNav ul li.inactive span {
+	text-decoration: none;
+	cursor: default;
+}
+
+div#main #gameNav ul li.first {
+	border-left: none;
+}
+
+div#main #gameNav ul li.last {
+	border-right: none;
+}
+/*End Game Nav*/
+
+.content_red { color: #c60c30; font-weight: bold; font-size: 108%; }
+
+h3.promoEnded { text-decoration: none; margin: .6em; color: #c60c30; font-size: 26px; font-weight: bold; line-height: 1.2em; text-align: center; }
+
+span.exclamation { font-size: 153.9%; margin: 0 0 0 2px; color: #c60c30; }
+
+.submitResponse {
+	font-weight: bold;
+	font-size: 108%;
+	margin-bottom: 50px;
+}
+
+#main {
+	position: relative;
+	background-color: #ffffff;
+	border-radius: 0 0 5px 5px;
+	/*box-shadow: -2px 0px 10px -6px #111, 4px 4px 10px -6px #111;*/
+	behavior: url(style/PIE.htc);
+	width: 960px;
+	margin: 0 auto;
+	z-index: 2;
+	height: auto;
+	clear: both;
+}
+
+#mainContent {
+	position: relative;
+	left: 0;
+	margin: 0 25px;
+	padding: 25px 0 10px 0;
+	overflow: hidden;
+}
+
+div#main div#topBanner { position: relative; height: 280px; }
+
+div.largeBanner {
+	position: relative;
+	width: 100%;
+	z-index: 2;
+}
+
+div.largeBanner .contentAreaMain {
+	height: 243px;
+	background-color: transparent;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+}
+
+div#largeSlideShow {
+	position: relative;
+	height: 243px;
+}
+
+#largeSlideShow .whtFade {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 35px;
+	width: 960px;
+	background: url(../images/png/whtFade.png) repeat-x;
+	z-index: 20;
+}
+
+div#largeSlideShow .slide {
+	left: 0;
+	width: 100%;
+	filter: inherit;
+}
+
+.prevLargeSlideShowBanner {
+	position: absolute; 
+	top: 70px; 
+	left: 50%;
+	margin-left: -480px;
+	z-index: 10; 
+	width: 66px; 
+	height: 94px; 
+	display: inline-block; 
+	background: url(../images/png/largeBannerArrowsPrev.png) 0 -94px no-repeat;
+	outline: none;
+}
+
+.nextLargeSlideShowBanner {
+	position: absolute;
+	top: 70px;
+	right: 50%;
+	margin-right: -480px;
+	z-index: 10;
+	width: 66px;
+	height: 94px;
+	display: inline-block;
+	background: url(../images/png/largeBannerArrowsNext.png) 0 -94px no-repeat;
+	outline: none;
+}
+
+a:hover.prevLargeSlideShowBanner, a:hover.nextLargeSlideShowBanner {
+	background-position: 0 0;
+}
+
+div#largeSlideShow .slide {
+	left: 0;
+	width: 100%;
+	filter: inherit;
+}
+
+.pagination {
+	position: absolute;
+	bottom: 2px;
+	right: 50px;
+	width: auto;
+	z-index: 1000;
+	margin: 0;
+	padding: 0;
+}
+
+.pagination li {
+	float: left;
+	margin: 0 2px;
+	list-style: none;
+}
+
+.pagination li a {
+	display: block;
+	width: 12px;
+	height: 0;
+	padding-top: 12px;
+	background-image: url(../images/png/slides_pagination.png);
+	background-position: 0 0;
+	float: left;
+	overflow: hidden;
+}
+
+.pagination li.current a {
+	background-position:0 -12px;
+}
+
+.noScript {
+	visibility: hidden;
+	cursor: default;
+}
+
+.noScriptBanner {
+	position: absolute;
+	z-index: 0;
+}
+
+.noScriptBanner:first-child {
+	z-index: 1;
+}
+
+#homePage {
+	overflow: auto;
+}
+
+#leftHome {
+	margin: -5px 0 25px 10px;
+	text-align: left;
+}
+
+#rightHome {
+	float: right;
+	width: 356px;
+	text-align: left;
+	padding: 20px 0 0 54px;
+	background: url(../images/png/grayLine.png) no-repeat 22px 0;
+	margin-bottom: 10px;
+}
+
+#rightHome img {
+	margin: 0 17px 20px 3px;
+	box-shadow: 4px 4px 7px -1px #333;
+	behavior: url(style/PIE.htc);
+}
+
+dl {
+	margin: 0;
+}
+
+.faqs dt {
+	font-weight: bold;
+	margin-bottom: .5em;
+}
+
+.faqs dd {
+	margin-bottom: 1em;
+}
+
+tr.cancelled td span {
+	text-decoration: line-through;
+}
+
+table.drawDates {
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	width: 70%;
+	text-align: center;
+	margin: 30px auto 25px auto;
+	padding: 0px;
+}
+
+table.drawDates thead tr th {
+	font-size: 123.1%;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #111;
+}
+
+table.drawDates thead tr th, table.drawDates tbody tr td {
+	padding: 8px;
+	border: 1px solid;
+}
+
+div.enterVouchers {
+	text-align: center;
+	margin: 50px auto 35px auto;
+	position: relative;
+	width: auto;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	text-shadow: 1px 1px 2px #111;
+}
+
+div.enterVouchers a {
+	position: relative;
+	padding: 8px 18px;
+	display: inline-block;
+	border-radius: 7px;
+	min-width: 250px;
+	color: #fff;
+	text-decoration: none;
+	behavior: url(style/PIE.htc);
+}
+
+table.tktEntry { width: 100%; margin-top: 10px; }
+
+.darkenBackground {
+	height: 100%;
+	width: 100%;
+	position:fixed;
+	top: 0px;
+	left: 0px;
+	background-color: rgb(0, 0, 0);
+	background-repeat:repeat;
+	-moz-opacity: 0.60;
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+	z-index: 10000;
+}
+
+#messageOverlay {
+	display: none;
+}
+
+#confirmBox {
+	background-color: #FFFFFF;
+	width: 400px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -130px 0 0 -200px;
+	border: 1px solid rgba(33, 33, 33, 0.6);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	z-index: 10001;
+}
+
+#confirmBox h1, #confirmBox p {
+	background: #f5f5f5;
+	padding: 20px 20px;
+	color: #000;
+}
+
+#confirmBox h1 {
+	letter-spacing: 0.3px;
+	color: #888;
+}
+
+#confirmBox p {
+	background: none;
+	font-size: 16px;
+	line-height: 1.4;
+	padding-top: 35px;
+}
+
+#confirmButtons {
+	padding: 0px 0 20px 0;
+	text-align: center;
+}
+
+#confirmBox a.button {
+	display: inline-block;
+	background-color: #DDD;
+	color: #000;
+	position: relative;
+	height: 28px;
+	line-height: 28px;
+	margin-right: 15px;
+	padding: 0 35px 0 40px;
+	text-decoration: none;
+	border: 1px solid #AAAAAA;
+	border-radius: 7px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+	background-image: -o-linear-gradient(bottom, #CCCCCC 0%, #EEEEEE 100%);
+	background-image: -moz-linear-gradient(bottom, #CCCCCC 0%, #EEEEEE 100%);
+	background-image: -webkit-linear-gradient(bottom, #CCCCCC 0%, #EEEEEE 100%);
+	background-image: -ms-linear-gradient(bottom, #CCCCCC 0%, #EEEEEE 100%);
+	background-image: linear-gradient(bottom, #CCCCCC 0%, #EEEEEE 100%);
+}
+
+#confirmBox a.button:hover{
+	background-color: #EEE;
+	color: #000;
+	background-image: -o-linear-gradient(bottom, #DDDDDD 0%, #FFFFFF 100%);
+	background-image: -moz-linear-gradient(bottom, #DDDDDD 0%, #FFFFFF 100%);
+	background-image: -webkit-linear-gradient(bottom, #DDDDDD 0%, #FFFFFF 100%);
+	background-image: -ms-linear-gradient(bottom, #DDDDDD 0%, #FFFFFF 100%);
+	background-image: linear-gradient(bottom, #DDDDDD 0%, #FFFFFF 100%);
+}
+
+#confirmBox a.button:active{
+	background-color: #EEE;
+	color: #000;
+	background-image: -o-linear-gradient(bottom, #BBBBBB 0%, #DDDDDD 100%);
+	background-image: -moz-linear-gradient(bottom, #BBBBBB 0%, #DDDDDD 100%);
+	background-image: -webkit-linear-gradient(bottom, #BBBBBB 0%, #DDDDDD 100%);
+	background-image: -ms-linear-gradient(bottom, #BBBBBB 0%, #DDDDDD 100%);
+	background-image: linear-gradient(bottom, #BBBBBB 0%, #DDDDDD 100%);
+}
+
+#confirmBox a.button:focus {
+	outline: 0;
+}
+
+.boldNote {
+	text-align: center;
+	font-weight: bold;
+}
+
+#footer {	
+	font-size: 77%;
+	color: #fff;
+	margin: 0 auto;
+	padding: 8px 0 10px 0;
+	text-align: left;
+	width: 960px;
+	z-index: 1;
+}
+
+#footer p {
+	margin: 0;
+	padding: 0;
+	height: 37px;
+	line-height: 37px;
+	vertical-align: middle;
+}
+
+.footerCopy {
+	float: left;
+	width: auto;
+}
+
+nav.footerNav {
+	float: right;
+	width: auto;
+	text-align: right;
+	margin-right: 5px;
+	margin-left: 15px;
+	position: relative;
+	font-size: 11px;
+}
+
+nav.footerNav ul {
+	position: relative;
+	margin: 0;
+	list-style-type: none;
+	display: inline-block;
+	padding: 0;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: middle;
+ }
+
+nav.footerNav ul li {
+	margin: 0 6px;
+}
+
+nav.footerNav ul li a, nav.footerNav ul li a:hover {
+	font-style: italic;
+}
+
+div.video {
+	text-align: center;
+	margin: 20px auto 10px auto;
+}
+
+/*Begin Register Styles*/
+section#register {
+	margin: 25px;
+}
+
+section#register fieldset {
+	float: right;
+	width: 390px;
+}
+
+section#register fieldset.loginInfo {
+	float: left;
+	margin-right: 44px;
+}
+
+section#register fieldset legend {
+	font-size: 138.5%;
+	font-weight: bold;
+	color: #333;
+}
+
+section#register fieldset div {
+	float: left;
+	margin-right: 20px;
+}
+
+section#register fieldset div.firstName, section#register fieldset div.lastName {
+	width: 185px;
+}
+
+section#register fieldset div.zip, section#register fieldset div.phone2, section#register fieldset div.lastName {
+	margin-right: 0;
+}
+
+#register label, form.forgotPassword label {
+	display: inline-block;
+	margin-top: 1.25em;
+}
+
+form.forgotPassword div.submit{
+	display: inline;
+}
+
+#register input {
+	width: 98%;
+}
+
+#register input.checkbox {
+	width: 13px;
+}
+
+p.alreadyReg {
+	float: right;
+	font-weight: bold;
+	font-size: 116%;
+	text-align: center;
+	margin: 0 6px 10px 20px;
+	padding: 15px 10px;
+	border: 1px #e98300 solid;
+	background-color: #fff4e6;
+	width: 250px;
+}
+
+section#register p.registerNotes {
+	clear: both;
+	font-size: 11px;
+	margin: 0;
+	padding: 3px 0 0 0;
+}
+
+section#register p.registerNotes2 {
+	margin-top: 72px;
+}
+
+#register #state {
+	width: 251px;
+}
+
+#register #zipcode {
+	width: 112px;
+}
+
+section#register fieldset div.state {
+	width: 251px;
+} 
+
+section#register fieldset div.zip {
+	width: 118px;
+} 
+
+section#register fieldset div.phone {
+	clear: left;
+}
+
+section#register fieldset div.phone, section#register fieldset div.phone2 {
+	width: 185px;
+}
+
+section#register fieldset div.phone input, section#register fieldset div.phone2 input, section#register fieldset div.firstName input, section#register fieldset div.lastName input {
+	width: 179px;
+}
+
+section#register div.submit {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+#register select {
+	width: 100%;
+	background-color: #F5F5F5;
+	border: 1px solid #CCC;
+	padding: 2px 0;
+}
+
+span.reqField {
+	color: #c60c30;
+	margin: 0 2px 0 -7px;
+}
+
+ul.errorMessage {
+	font-size: 93%;
+	color: #c60c30;
+	font-weight: bold;
+}
+
+input.errorMessage {
+	border: 1px solid #c60c30;
+	background-color: #fae8eb;
+}
+
+input.submitButton, #register input.submitButton {
+	font-size: 93%;
+	position: relative;
+	height: 32px;
+	width: auto;
+	border: 1px solid #CCC;
+	overflow: hidden;
+	padding: 4px 50px;
+	margin: 15px;
+	color: #000;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 5px 5px 5px 5px;
+	background-color: #FEFEFE;
+	background: linear-gradient(to bottom, #FEFEFE 0%,#DEDEDE 100%); /*W3C */
+	-pie-background: linear-gradient(#FEFEFE, #DEDEDE);
+	behavior: url(style/PIE.htc);
+}
+/*End Register Styles*/
+
+section.loginPage {
+	width: 390px;
+}
+
+section.loginPage div.submit {
+	margin-top: 16px;
+}
+
+div.notRegistered {
+	float: right;
+	font-weight: bold;
+	font-size: 116%;
+	text-align: center;
+	margin: 30px 80px 10px 10px;
+	padding: 15px 25px;
+	border: 1px #e98300 solid;
+	background-color: #fff4e6;
+	width: 230px;
+}
+
+div.notRegistered p.forgotPwd {
+	border-top: 1px #e98300 solid;
+	padding-top: 15px;
+	margin-bottom: 0;
+}
+
+form#ticketEntryForm { margin: 15px 0 30px 50px; }
+
+form#ticketEntryForm p span { font-weight: bold; margin-right: 4px; }
+
+form#ticketEntryForm input.ticketSubmit {
+	position: relative;
+	border-radius: 7px;
+	border: none;
+	height: 29px;
+	padding: 1px 18px 0 18px;
+	margin-left: 6px;
+	color: #ffffff;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	behavior: url(style/PIE.htc);
+}
+
+p.playerAlert { margin: 0 0 20px 0; border: 2px #e98300 solid; background-color: #fff4e6; padding: 15px 20px; }
+p.playerAlert span { font-weight: bold; }
+
+table#ticketEntryList tr.cancelled td {
+	text-decoration: line-through;
+}
+
+table#ticketEntryList {
+	margin-bottom: 1em;
+}
+
+.disqualifiedNote {
+	font-size: 93%; margin-bottom:10px;
+}
+
+.redAsterisk {
+	color: #FF0000; 
+	font-weight: bold;
+}
+
+div.bogoCoupon {
+	text-align: left;
+	width: 305px;
+	border: dashed 2px #000;
+	margin: 30px auto 20px auto;
+}
+
+div.bogoCoupon img {
+	z-index: 1;
+	margin-bottom: -55px;
+}
+
+div.bogoCoupon p {
+	z-index: 10;
+	margin: 0 15px 15px 15px;
+	font-size: 12px;
+}
+
+div.bogoCoupon p.couponTitle {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 26px;
+	text-align: center;
+	margin: 10px 15px 16px 15px;
+}
+
+div.bogoCoupon img.barcode {
+	display: block;
+	margin: 25px auto 20px auto;
+}
+
+div.bogoCoupon p.couponExp {
+	font-weight: bold;
+	text-align: center;
+	font-size: 12px;
+	padding: 0;
+	margin: 10px 16px 0 8px;
+	line-height: 65px;
+	vertical-align: 65px;
+}
+
+div.bogoCoupon p.couponExp img {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+div.printCoupon {
+	text-align: center;
+	margin: 25px 100px 0 15px;
+	float: right;
+}
+
+div.printCoupon .couponSubmit,
+div#thankYouDiv .couponBack {
+	background: transparent url(../images/png/couponPrint.png) no-repeat;
+	width: 145px;
+	height: 42px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	border: none;
+	cursor: pointer;
+	margin: 0 auto;
+	padding: 0 0 0 3px;
+}
+
+div#thankYouDiv .couponSubmit {
+	margin-left: 200px;
+}
+
+div#thankYouDiv {
+	margin-bottom: -15px;
+}
+
+div#thankYouDiv img.couponImg {
+	float: right;
+	width: 300px;
+	margin: 30px 0 0 40px;
+}
+
+div#thankYouDiv h1 {
+	color: #000;
+	font-size: 44px;
+	line-height: 60px;
+	text-align: center;
+	margin: 25px 0 25px 70px;
+}
+
+div#thankYouDiv h2 {
+	text-align: center;
+	color: #26408a;
+	margin: 0 0 25px 70px;
+	line-height: 32px;
+	font-style:italic;
+	font-size:24px;
+}
+div#thankYouDiv a.learnMore {
+	margin-left: 185px;
+}
+
+div#thankYouDiv a.couponBack {
+	text-decoration: none;
+	//color: #232d30;
+	position: absolute;
+	bottom: 20px;
+	left: 15px;
+	//background: transparent url(../images/gif/back.gif) no-repeat center left;
+	padding-left: 10px;
+	padding-top: 10px;
+	//height: 7px;
+	//line-height: px;
+	//vertical-align: top;
+}
+
+div#thankYouDiv { display: none; }
+div.couponRedemption{
+	position: absolute;
+	top: 120px;
+	right: 0px;
+}
+div.couponRedemption img{
+	overflow: visible;
+	z-index: 1;
+}
+
+div#regInst {
+	text-align: center;
+	font-style:italic;
+}

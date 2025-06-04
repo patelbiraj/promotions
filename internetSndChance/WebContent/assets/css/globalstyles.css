@@ -1,0 +1,371 @@
+/* FRAMEWORK */
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.FloatLeft {
+  float: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.clear, .Clear {
+  clear: both;
+}
+
+/* Fixes for Floats */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+/* End hide from IE-mac */
+
+/* END FRAMEWORK */
+
+@font-face {
+  font-family: 'Kabel';
+  src: url('../fonts/kabel-webfont.eot');
+  src: url('../fonts/kabel-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/kabel-webfont.woff') format('woff'),
+    url('../fonts/kabel-webfont.ttf') format('truetype'),
+    url('../fonts/kabel-webfont.svg#kabelbook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-light-webfont.eot');
+  src: url('../fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/opensans-light-webfont.woff') format('woff'),
+    url('../fonts/opensans-light-webfont.ttf') format('truetype'),
+    url('../fonts/opensans-light-webfont.svg#open_sanslight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/opensans-bold-webfont.eot');
+  src: url('../fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/opensans-bold-webfont.woff') format('woff'),
+    url('../fonts/opensans-bold-webfont.ttf') format('truetype'),
+    url('../fonts/opensans-bold-webfont.svg#open_sanslight') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* UNIVERSAL STYLES */
+body {
+  font-size: 62.5%;
+  font-family: "Open Sans", "sans-serif";
+  font-weight: 300;
+  color: #747474;
+  width: 100%;
+  background-color: #ebebeb;
+  background: #ebebeb url('../i/footer_buildings.gif') bottom right no-repeat;
+  background-attachment: fixed;
+}
+
+h1,
+h2 {
+  font-family: "Kabel";
+  color: #3b3b3b;
+}
+
+h1 {
+  font-size: 3.0em;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 3.0em;
+  letter-spacing: -0.04em;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.4em;
+  line-height: 1.8em;
+  margin-bottom: 20px;
+}
+
+#content {
+  background-color: #ffffff;
+  width: 100%;
+  float: left;
+  clear: both;
+  padding: 60px 0 80px 0;
+}
+
+.wrapper {
+  width: 89%;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 20px 40px;
+}
+
+ul li {
+  list-style: disc;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.btn, input[type="submit"]{
+  background-color: #e03d39;
+  border-radius: 10px;
+  border: 2px solid #c52c2a;
+  padding: 11px 30px 9px 30px;
+  font-family: "Kabel";
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.6);
+  font-size: 1.33em;
+  letter-spacing: -0.03em;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-out;
+}
+
+.btn.small {
+  font-size: .8em;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  color: #ffffff;
+}
+
+.grey {
+  background-color: #5F5F5F;
+  border-color: #4f4f4f;
+  color: #ffffff;
+  text-shadow: none;
+}
+/**/
+
+/* FORMS */
+form {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+label, .Label, .legend{
+  display: block;
+  font-size: 1.3em;
+  color: #000000;
+  margin-bottom: 3px;
+}
+
+input, .Input input, .InputField, textarea{
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #333333;
+  display: inline-block;
+  height: 28px;
+  padding: 4px 6px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #555555;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-shadow: none;
+  background-color: #ffffff;
+  border: 1px solid #d8d8d8;
+  box-shadow: none;
+  transition: border linear .2s, box-shadow linear .2s;
+  width: 98%;
+  font-size: 1.6em;
+  outline: none;
+}
+
+input:focus, textarea:focus{
+  border-color: #333333;
+  border-width: 2px;
+}
+
+input[type="submit"]{
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+input[type="image"] {
+  height: auto;
+  width: auto;
+  border: none;
+  padding: none;
+}
+
+input[disabled] {
+  opacity: .5;
+}
+
+form .Error input, input.error{
+  border: 2px solid #F6544E;
+}
+
+form .Error label, .Error {
+  color: #F6544E;
+}
+
+.errorBox {
+  background-color: #f6544e;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+.errorBox .errorText {
+  padding: 0.5em;
+  line-height: 1.2em;
+}
+
+.Input span {
+  margin-bottom: 20px;
+  display: block;
+  clear: both;
+}
+
+form .dashes, form .dash {
+  display: inline-block;
+  margin: 9px 3px;
+  vertical-align: top;
+}
+
+form h2 {
+  font-size: 1.8em;
+  line-height: 1em;
+  padding: 0 0 0.2em;
+  margin-bottom: 0.8em;
+  border-bottom: 1px solid #eee;
+}
+
+.required {
+  font-weight: bold;
+}
+
+input.required { /*keeps font inside required input normal*/
+  font-weight: normal;
+}
+
+/* selects */
+select {
+  background: #ffffff;
+  padding: 5px;
+  height: 28px;
+  font-weight: bold;
+  outline: none;
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  height: 28px;
+  margin: 0 5px 15px 0;
+  min-width: 80px;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+select:active, select:focus {
+  border: 2px solid #3b3b3b;
+}
+/**/
+/* END FORMS */
+
+/* HEADER */
+#header {
+  background: url('../i/header_buildings.png') top center no-repeat, #a0d6d2 url('../i/header_stripe.gif');
+  float: left;
+  width: 100%;
+  border-bottom: 11px solid #a0d6d2;
+  padding-top: 20px;
+  position: relative;
+}
+
+/* FOOTER */
+#footer {
+  border-top: 15px solid #5e676b;
+  width: 100%;
+  float: left;
+  min-height: 295px;
+  text-align: center;
+}
+
+#footer ul {
+  list-style: none;
+  text-align: center;
+  margin: 40px 0;
+}
+
+#footer ul li {
+  display: inline-block;
+  padding: 0 10px 20px 10px;
+  font-size: 1em;
+}
+
+#footer ul li a {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #747474;
+  padding: 3px 5px;
+  transition: all 0.2s;
+}
+
+#footer ul li a:hover{
+  background-color: #d9d9d9;
+  border-radius: 3px;
+  color: #333333;
+}
+
+.footerWrapper {
+  max-width: 820px;
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#footer p {
+  font-size: 1.2em;
+}
+
+.footer-text {
+  width: 50%;
+  margin: 0 auto;
+}
+/* END FOOTER */

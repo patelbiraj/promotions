@@ -1,0 +1,11 @@
+.metadata/
+ESA_Properties/
+RemoteSystemsTempFiles/
+*.war
+internetSecondChanceWebApp/
+internetSndChanceWebApp/
+lotteryWebsite/
+lotteryWebsiteEAR/
+sca/
+*.ear
+scaEAR/

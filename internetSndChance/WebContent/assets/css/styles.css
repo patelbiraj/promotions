@@ -1,0 +1,179 @@
+#lotteryLogo {
+  display: block;
+  float: left;
+  margin-bottom: 20px;
+  min-height: 97px;
+  width: 144px;
+}
+
+#accountHolder {
+  float: right;
+  text-align: right;
+  width: 215px;
+  z-index: 10;
+}
+
+#accountHolder .btn {
+  margin-bottom: 5px;
+  width: 190px;
+}
+
+.outerLogo {
+  position: relative;
+  margin: 0 auto;
+  width: 298px;
+}
+  
+#smallMonopolyLogo {
+  height: 110px;
+  position: absolute;
+}
+
+.registrationWrapper {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.AgeVerify label {
+  clear: none;
+}
+
+.has-pretty-child label {
+  clear: none;
+  max-width: 84%;
+}
+
+.registrationwrap form .FloatLeft {
+  float: none;
+}
+
+#MiddleInitial {
+  width: 45px;
+}
+
+#Address1 {
+  margin-bottom: 0;
+}
+#Address2 {
+  margin-top: -10px;
+}
+#PostalCode {
+  margin-bottom: 0;
+  width: 100px;
+}
+
+#PhoneArea, #PhonePrefix, #PhoneExtension {
+  width: 60px;
+}
+#MobileArea, #MobilePrefix, #MobileExtension {
+  width: 60px;
+}
+
+.prettyradio {
+  float: left;
+  text-align: center;
+  width: 100px;
+}
+
+.Gender {
+  clear: both;
+  margin: 20px 0;
+}
+.Gender .hidden {
+  display: none;
+}
+
+.ValidatePassword {
+  margin-bottom: 4px;
+}
+
+#loginStatus {
+  display: block;
+  float: right;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#LoginArea {
+  float: none;
+  margin: 0 auto;
+  width: 340px;
+}
+#LoginArea #Email, #Registration #Email, #Registration #ConfirmEmail {
+  margin-bottom: 0;
+}
+
+#createAccountBtn {
+  min-width: 184px;
+  text-align: center;
+}
+
+.prettycheckbox {
+  min-width: 80%;
+}
+
+@media (max-width: 930px) {
+  .outerLogo {
+    width: 175px;
+    margin: 0 auto;
+  }
+  
+  #smallMonopolyLogo {
+    height: auto;
+    width: 160px;
+  }
+
+  #createAccountBtn {
+    min-width: 0;
+  }
+
+  #header {
+    padding-top: 5px;
+  }
+  
+  #header .wrapper {
+    min-height: 90px;
+  }
+
+  #accountHolder {
+    margin-bottom: 5px;
+    margin-top: 70px;
+    width: 104px;
+  }
+  #accountHolder .btn {
+    border-radius: 4px;
+    font-size: 0.85em;
+    padding: 5px;
+    text-align: center;
+    width: 105px
+  }
+
+  #lotteryLogo {
+    min-height: 68px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 3px;
+    top: 70px;
+    width: 100px;
+  }
+
+  .footerWrapper {
+    width: 90%;
+  }
+  #footer ul li {
+    margin: 5px 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 525px) {
+  #LoginArea {
+    width: auto;
+  }
+
+  #content {
+    padding: 8em 0;
+  }
+}
